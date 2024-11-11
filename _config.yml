@@ -1,0 +1,4 @@
+title: "EXP Accounting"
+description: "Chartered Professional Accountants in Vancouver"
+baseurl: "" # Leave empty if deploying to the root of a domain
+url: "https://<your-username>.github.io/expaccounting" # Replace with your GitHub Pages URL

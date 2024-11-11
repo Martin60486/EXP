@@ -1,0 +1,142 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    text-align: center;
+    padding: 20px 20px 150px; /* 1 value: all 4 sides; 2 values: first for top & bottom, second left & right; 
+    3 values: first top, second left & right, third bottom, ie, 20px between the upper edge of h1 box
+    and the top boder of the banner container; 50px between the lower edge of p box and the bottom
+    border of the banner container; padding: pushing an element's content inward */
+    background-image: url("/assets/images/vancouver.jpg");
+    background-size: cover;
+    background-position: center;
+    color: brown;
+    display: flex;
+    flex-direction: row;
+    align-items: center;  /* vertically */
+    gap: 0px; /*gap between children, h1 (contains "EXP..") and p (contains "Chartered...") in vertical */
+    justify-content: center; /*horizontally */
+}
+
+/* Logo */
+.logo-image {
+    position: absolute;
+    top: 20px; /*top position from the upper border of containter*/
+    left: 20px; /*left position from the left border of container */
+    height: 50px; /* width will adjust according to ratio of the original image */
+}
+
+/* Text Styling */
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+.text-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0; /* space between two elements, pushing two elements apart */
+    padding-top: 0px;
+    color: #1c0e05;
+}
+
+.text-content p {
+    font-size: 24px;
+    margin-top: 0px;
+    color: #1c0d04; /* #1b0c03f1, #1c0d04*/
+    font-weight: bold;
+}
+
+/* About Section */
+.about {
+    background-color: #1f5a7f;
+    padding: 40px 20px;
+    color: white;
+    display: flex;
+    /*justify-content: center;*/
+    text-align: left;
+}
+
+.about-content {
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-image {
+    max-width: 200px;
+    height: auto;
+}
+/* Service Section */
+.services {
+    background-color: #96aab6ee;
+    padding-left: 40px;
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    align-items: center;
+    background-color: #1f5a7f;
+    color: black;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.contact-image {
+    max-width: 150px;
+    margin-right: 20px;
+}
+
+.contact-info {
+    max-width: 600px;
+    font-weight: bold;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info a:hover {
+    margin: 5px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.contact a {
+    color: black; /* Change this to #333333 for a deep grey */
+    text-decoration: none; /* Optional: Remove underline */
+    font-weight: bold;
+    font-size: 18px;
+}
+/*
+.contact a:hover {
+    color: #666666;  Optional: Add a hover effect with a slightly lighter grey 
+}*/
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .banner, .about, .contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content h1, .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+}
