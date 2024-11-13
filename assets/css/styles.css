@@ -132,34 +132,23 @@ body {
         background-repeat: no-repeat;
         min-height: 40vh; /* Set a smaller height for mobile */    
     }
-    .about, .contact {
+    
+    /* About Section */
+    .about {
         width: 100%;
-        align-items: center;
-        background-color: #1f5a7f;
-        color: black;
-        padding: 20px; /* Adjust as needed for inner spacing */
-        margin: 20px; /* Adds space around the contact section */
-        text-align: left;
-        border-radius: 8px; /* Optional: adds rounded corners for a softer look */
+        padding: 10px; /* Adjust as needed for inner spacing */
+        margin: 0; /* No outer margin */
+        background-color: #7e8bee;
+        color: white;
+        border-radius: 8px; /* Optional */
     }
-    .text-content, .about-content, .contact, .contact-info {
-        display: flex;
-        flex-direction: column;
-    }
-    .text-content, .about-content, .contact, .contact-info, .about-image, .contact-image {
-        margin: 0;
-        padding: 0;
-    }
-    .text-content {
-       align-items: center;  /* vertically */
-       text-align: left;
-       margin: auto;
-    }
+
     .about-content {
-        align-items: center;  /* vertically */
+        align-items: center; /* vertically */
         width: 100%;
     }
-    .about-image, .contact-image {
+
+    .about-image {
         max-width: none;
         width: 100% !important;
         height: auto !important;
@@ -167,28 +156,54 @@ body {
         margin: 0;
         padding: 0;
     }
+
     .about-content p {
         width: 100%;
         text-align: left;
     }
+
+    /* Contact Section */
+    .contact {
+        width: 100%;
+        padding: 20px; /* Adjust as needed for inner spacing */
+        margin: 20px 0; /* Adds space around the contact section */
+        background-color: #1f5a7f;
+        color: black;
+        text-align: left;
+        border-radius: 8px; /* Optional */
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .text-content, .about-content, .contact-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-content {
+        align-items: center;  /* vertically */
+        text-align: left;
+        margin: auto;
+    }
+
     .logo-image {
         position: absolute;
         top: 10px;
         left: 10px;
         height: 30px;
     }
-    .contact, .contact_info {
-        width: 100%;
-        text-align: left;
-    }
+
     .text-content h1, .banner h1 {
         font-size: 36px;
     }
+
     .banner p {
         font-size: 18px;
     }
 }
-
 
 
 
