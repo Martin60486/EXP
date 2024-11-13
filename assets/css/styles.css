@@ -89,6 +89,10 @@ body {
     padding: 20px;
     text-align: left;
 }
+.contact-header {
+    display: flex;
+    flex-direction: row;
+}
 
 .contact-image {
     max-width: 150px;
