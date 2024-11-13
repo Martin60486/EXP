@@ -25,7 +25,7 @@ body {
     justify-content: center; /*horizontally*/
     width: 100vw;
     height: auto;
-    min-height: 60vh; /* Adjust height as needed */
+    min-height: 80vh; /* Adjust height as needed */
     position: relative;
     text-align: cover;
     /*min-height: 50vh;*/
