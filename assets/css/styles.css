@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: yellowgreen; /* Add a color that matches the image */
+    background-color: rgb(196, 195, 178); /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -130,6 +130,7 @@ body {
         min-height: 40vh; /* Set a smaller height for mobile */    
     }
     .text-content, .about-content, .contact, .contact-info {
+        display: flex;
         flex-direction: column;
     }
     .text-content {
@@ -139,12 +140,18 @@ body {
         margin: auto;
     }
     .about-content {
-        flex-direction: column;
         align-items: center;  /*vertically*/
+        width: 100%;
     }
     .about-image {
         width: 100%;
         height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .about-content p {
+        width: 90%;
+        text-align: center;
     }
     .logo-image {
         position: absolute;
