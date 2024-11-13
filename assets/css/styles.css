@@ -123,14 +123,20 @@ body {
 
 /* Media Queries */
 @media (max-width: 767px) {
-    .banner, .text-content, .about-content, .contact, .contact-info {
+    .banner {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 40vh; /* Set a smaller height for mobile */    
+    }
+    .text-content, .about-content, .contact, .contact-info {
         flex-direction: column;
     }
     .text-content {
        /* margin-top: 5px;*/
         align-items: center;  /* vertically */
         text-align: center;
-        margin-top: 5px;
+        margin: auto;
     }
     .about-content {
         flex-direction: column;
@@ -139,7 +145,6 @@ body {
     .about-image {
         width: 100%;
         height: auto;
-        margin-bottom: 20px;
     }
     .logo-image {
         position: absolute;
@@ -161,7 +166,6 @@ body {
     .contact-image {
         width: 100%; 
         height: auto;
-        margin-bottom: 20px;
     }
  
 }
