@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(239, 240, 234); /* Add a color that matches the image */
+    background-color: #549af0; /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -55,7 +55,7 @@ body {
 
 /* About Section */
 .about {
-    background-color: #1f5a7f;
+    background-color: #7e8bee;
     padding: 40px 20px;
     color: white;
     display: flex;
@@ -76,7 +76,7 @@ body {
 }
 /* Service Section */
 .services {
-    background-color: #96aab6ee;
+    background-color: #d9c9bfe4;
     padding-left: 40px;
 }
 
@@ -133,6 +133,10 @@ body {
         display: flex;
         flex-direction: column;
     }
+    .text-content, .about-content, .contact, .contact-info, .about-image, .contact-image {
+        margin: 0;
+        padding: 0;
+    }
     .text-content {
        /* margin-top: 5px;*/
         align-items: center;  /* vertically */
@@ -143,11 +147,10 @@ body {
         align-items: center;  /*vertically*/
         width: 100%;
     }
-    .about-image {
+    .about-image, .contact-image {
         width: 100%;
         height: auto;
-        margin: 0;
-        padding: 0;
+        box-sizing: border-box;
     }
     .about-content p {
         width: 100%;
@@ -161,6 +164,7 @@ body {
     }
 
     .contact, .contact_info {
+        width: 100%;
         text-align: left;
     }
     .text-content h1, .banner h1 {
@@ -170,9 +174,6 @@ body {
     .banner p {
         font-size: 18px;
     }
-    .contact-image {
-        width: 100%; 
-        height: auto;
-    }
+
  
 }
