@@ -154,13 +154,14 @@ body {
         width: 100% !important;
         height: auto !important;
         box-sizing: border-box;
-        margin: 0;
+        margin: 5px;
         padding: 0;
     }
 
     .about-content p {
         width: 100%;
         text-align: left;
+        padding: 5px;
     }
 
     /* Contact Section */
