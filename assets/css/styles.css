@@ -12,6 +12,18 @@ body {
 
 /* Banner Section */
 .banner {
+    background-image: url("/EXP/assets/images/vancouver.jpg");
+    background-size: cover; /* Ensures the image covers the full area */
+    background-position: center top; /* Focuses on the top part of the image */
+    background-repeat: no-repeat; /* Ensures no repetition */
+    
+    position: relative;
+    text-align: center;
+    color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center; /*horizontally*/
+    min-height: 60vh; /* Adjust height as needed */
     position: relative;
     text-align: cover;
     /*min-height: 50vh;*/
@@ -19,16 +31,7 @@ body {
     3 values: first top, second left & right, third bottom, ie, 20px between the upper edge of h1 box
     and the top boder of the banner container; 50px between the lower edge of p box and the bottom
     border of the banner container; padding: pushing an element's content inward */
-    background-image: url("/EXP/assets/images/vancouver.jpg");
-    background-size: contain;
-    background-position: center;
-    /*background-repeat: no-repeat;*/
-    color: brown;
-    display: flex;
-    flex-direction: row;
-    align-items: center;  /* vertically */
     gap: 0px; /*gap between children, h1 (contains "EXP..") and p (contains "Chartered...") in vertical */
-    justify-content: center; /*horizontally */
 }
 
 /* Logo */
