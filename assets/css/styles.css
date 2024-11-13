@@ -126,6 +126,7 @@ body {
     body {
         overflow-x: hidden; /* Prevents horizontal scrolling but allows vertical scrolling */
     }
+
     .banner {
         background-size: cover;
         background-position: center;
@@ -140,7 +141,7 @@ body {
         margin: 0; /* No outer margin */
         background-color: #7e8bee;
         color: white;
-        border-radius: 8px; /* Optional */
+        border-radius: 0; /* Remove rounded corners */
     }
 
     .about-content {
@@ -166,11 +167,20 @@ body {
     .contact {
         width: 100%;
         padding: 20px; /* Adjust as needed for inner spacing */
-        margin: 20px 0; /* Adds space around the contact section */
+        margin: 0; /* No outer margin to remove gaps */
         background-color: #1f5a7f;
         color: black;
         text-align: left;
-        border-radius: 8px; /* Optional */
+        border-radius: 0; /* Remove rounded corners */
+        display: flex;
+        flex-direction: column; /* Arrange content in a column on mobile */
+        align-items: center;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px; /* Adds spacing between image and text */
     }
 
     .contact-info {
@@ -204,9 +214,3 @@ body {
         font-size: 18px;
     }
 }
-
-
-
-
-
-
