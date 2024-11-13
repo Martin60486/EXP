@@ -22,7 +22,7 @@ body {
     background-image: url("/EXP/assets/images/vancouver.jpg");
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     color: brown;
     display: flex;
     flex-direction: row;
