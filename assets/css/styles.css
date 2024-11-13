@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #549af0; /* Add a color that matches the image */
+    background-color: #cde2e8; /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -148,8 +148,8 @@ body {
         width: 100%;
     }
     .about-image, .contact-image {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         box-sizing: border-box;
     }
     .about-content p {
