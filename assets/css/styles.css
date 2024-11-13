@@ -13,7 +13,8 @@ body {
 /* Banner Section */
 .banner {
     position: relative;
-    text-align: center;
+    text-align: cover;
+    min-height: 50vh;
     padding: 20px 20px 150px; /* 1 value: all 4 sides; 2 values: first for top & bottom, second left & right; 
     3 values: first top, second left & right, third bottom, ie, 20px between the upper edge of h1 box
     and the top boder of the banner container; 50px between the lower edge of p box and the bottom
@@ -21,6 +22,7 @@ body {
     background-image: url("/EXP/assets/images/vancouver.jpg");
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     color: brown;
     display: flex;
     flex-direction: row;
