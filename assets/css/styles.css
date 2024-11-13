@@ -13,9 +13,11 @@ body {
 /* Banner Section */
 .banner {
     background-image: url("/EXP/assets/images/vancouver.jpg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: yellowgreen; /* Add a color that matches the image */
+    background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -23,7 +25,6 @@ body {
     text-align: center;
     color: brown;
 }
-
 /* Logo */
 .logo-image {
     position: absolute;
