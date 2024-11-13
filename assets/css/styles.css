@@ -127,11 +127,17 @@ body {
 
 /* Media Queries */
 @media (max-width: 767px) {
-    .banner, text-content {
+    .banner, .text-content, .about-content, .contact, .contact-info {
         flex-direction: column;
     }
-    .about, .contact {
-        flex-direction: column;
+    .logo-image {
+        position: absolute;
+        top: 10px; /*top position from the upper border of containter*/
+        left: 10px; /*left position from the left border of container */
+        height: 30px;
+    }
+
+    .contact, .contact_info {
         text-align: left;
     }
     .text-content h1, .banner h1 {
@@ -141,11 +147,5 @@ body {
     .banner p {
         font-size: 18px;
     }
-    .contact {
-        flex-direction: column;
-    }
-    .contact-info {
-        flex-direction: column;
-        text-align: left;
-    }
+ 
 }
