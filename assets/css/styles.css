@@ -14,8 +14,8 @@ body {
 .banner {
     position: relative;
     text-align: cover;
-    min-height: 50vh;
-    padding: 20px 20px 150px; /* 1 value: all 4 sides; 2 values: first for top & bottom, second left & right; 
+    /*min-height: 50vh;*/
+    padding: 20px; /* 1 value: all 4 sides; 2 values: first for top & bottom, second left & right; 
     3 values: first top, second left & right, third bottom, ie, 20px between the upper edge of h1 box
     and the top boder of the banner container; 50px between the lower edge of p box and the bottom
     border of the banner container; padding: pushing an element's content inward */
