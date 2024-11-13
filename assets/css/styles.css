@@ -16,7 +16,6 @@ body {
     background-size: cover; /* Ensures the image covers the full area */
     background-position: center top; /* Focuses on the top part of the image */
     background-repeat: no-repeat; /* Ensures no repetition */
-    background-attachment: fixed;
     
     position: relative;
     text-align: center;
@@ -24,6 +23,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; /*horizontally*/
+    width: 100vw;
+    height: auto;
     min-height: 60vh; /* Adjust height as needed */
     position: relative;
     text-align: cover;
