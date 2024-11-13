@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(196, 195, 178); /* Add a color that matches the image */
+    background-color: rgb(233, 240, 240); /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -136,7 +136,7 @@ body {
     .text-content {
        /* margin-top: 5px;*/
         align-items: center;  /* vertically */
-        text-align: center;
+        text-align: left;
         margin: auto;
     }
     .about-content {
@@ -150,7 +150,7 @@ body {
         padding: 0;
     }
     .about-content p {
-        width: 90%;
+        width: 100%;
         text-align: center;
     }
     .logo-image {
