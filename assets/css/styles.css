@@ -127,16 +127,25 @@ body {
 
 /* Media Queries */
 @media (max-width: 767px) {
-    .banner, .about, .contact {
+    .banner, text-content {
         flex-direction: column;
-        text-align: center;
     }
-
+    .about, .contact {
+        flex-direction: column;
+        text-align: left;
+    }
     .text-content h1, .banner h1 {
         font-size: 36px;
     }
 
     .banner p {
         font-size: 18px;
+    }
+    .contact {
+        flex-direction: column;
+    }
+    .contact-info {
+        flex-direction: column;
+        text-align: left;
     }
 }
