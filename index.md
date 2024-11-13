@@ -59,11 +59,13 @@ title: Home
 
 <!-- Contact Section -->
 <section class="contact">
-    <div class="contact-header">
+    <div class="contact-image-wrapper">
         <img src="{{ '/assets/images/telephone.jpg' | relative_url }}" alt="Vintage Telephone" class="contact-image">
+    </div>
+    <div class="contact-heading">
         <h2>Contact us:</h2>
     </div>
-    <div class="contact-info">
+    <div class="contact-details">
         <p>Email: info@expaccounting.ca<br>
            Phone: 604-838-9028; 778-918-8898<br>
            Feel free to reach out via email or telephone for any inquiries!</p>
