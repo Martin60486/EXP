@@ -13,8 +13,8 @@ body {
 /* Banner Section */
 .banner {
     background-image: url("/EXP/assets/images/vancouver.jpg");
-    background-size: cover; /* Ensures the image covers the full area */
-    background-position: center top; /* Focuses on the top part of the image */
+    background-size: contain; /* Ensures the image covers the full area */
+    background-position: center; /* Focuses on the top part of the image */
     background-repeat: no-repeat; /* Ensures no repetition */
     
     position: relative;
