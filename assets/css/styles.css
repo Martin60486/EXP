@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(233, 240, 240); /* Add a color that matches the image */
+    background-color: rgb(239, 240, 234); /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -151,7 +151,7 @@ body {
     }
     .about-content p {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
     .logo-image {
         position: absolute;
