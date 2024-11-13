@@ -137,7 +137,7 @@ body {
     /* About Section */
     .about {
         width: 100%;
-        padding: 10px; /* Adjust as needed for inner spacing */
+        padding: 0px; /* Adjust as needed for inner spacing */
         margin: 0; /* No outer margin */
         background-color: #7e8bee;
         color: white;
@@ -166,9 +166,9 @@ body {
     /* Contact Section */
     .contact {
         width: 100%;
-        padding: 20px; /* Adjust as needed for inner spacing */
+        padding: 10px; /* Adjust as needed for inner spacing */
         margin: 0; /* No outer margin to remove gaps */
-        background-color: #1f5a7f;
+        background-color: #7e8bee;
         color: black;
         text-align: left;
         border-radius: 0; /* Remove rounded corners */
