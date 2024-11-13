@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #cde2e8; /* Add a color that matches the image */
+    background-color: #f3f5f6; /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
@@ -123,11 +123,17 @@ body {
 
 /* Media Queries */
 @media (max-width: 767px) {
+    body {
+        overflow: hidden;
+    }
     .banner {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 40vh; /* Set a smaller height for mobile */    
+    }
+    .about, .contact {
+        width: 100%;
     }
     .text-content, .about-content, .contact, .contact-info {
         display: flex;
@@ -148,6 +154,7 @@ body {
         width: 100%;
     }
     .about-image, .contact-image {
+        max-width: none;
         width: 100% !important;
         height: auto !important;
         box-sizing: border-box;
