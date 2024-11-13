@@ -199,6 +199,7 @@ body {
     }
 
     .contact-header {
+        flex-direction: row;
         width: 100%;
         justify-content: center; /* Center-align the image and heading on mobile */
         margin-bottom: 10px; /* Space between header and contact info */
