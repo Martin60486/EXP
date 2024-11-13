@@ -130,6 +130,9 @@ body {
     .banner, .text-content, .about-content, .contact, .contact-info {
         flex-direction: column;
     }
+    .text-content {
+        margin-top: 5px;
+    }
     .logo-image {
         position: absolute;
         top: 10px; /*top position from the upper border of containter*/
