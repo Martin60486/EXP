@@ -59,13 +59,14 @@ title: Home
 
 <!-- Contact Section -->
 <section class="contact">
-    <img src="{{ '/assets/images/telephone.jpg' | relative_url }}" alt="Vintage Telephone" class="contact-image">
-    
-    <div class="contact-info">
+    <div class="contact-header">
+        <img src="{{ '/assets/images/telephone.jpg' | relative_url }}" alt="Vintage Telephone" class="contact-image">
         <h2>Contact us:</h2>
-        <p>Email: <a href="mailto:info@expaccounting.ca">info@expaccounting.ca</a></p>
-        <p>Phone: 604-838-9028; 778-918-8898</p>
-        <p>Feel free to reach out via email or telephone for any inquiries!</p>
+    </div>
+    <div class="contact-info">
+        <p>Email: info@expaccounting.ca<br>
+           Phone: 604-838-9028; 778-918-8898<br>
+           Feel free to reach out via email or telephone for any inquiries!</p>
     </div>
 </section>
 <!--<section> has two children: <img> and <div>; .contact->flex align the two children side by side-->

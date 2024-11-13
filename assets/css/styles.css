@@ -86,26 +86,29 @@ body {
     align-items: center;
     background-color: #dce5ea;
     color: black;
-    padding: 40px 20px;
+    padding: 20px;
     text-align: left;
 }
 
 .contact-image {
     max-width: 150px;
-    margin-right: 20px;
+    height: auto;
+    margin-right: 10px;/* Space between image and heading */
 }
 
 .contact-info {
-    max-width: 600px;
-    font-weight: bold;
+    flex: 1; /* Ensures contact info takes remaining space */
 }
 
 .contact-info h2 {
-    margin-top: 0;
+    margin: 0;
+}
+.contact-info p {
+    margin-top: 10px;
 }
 
 .contact-info a:hover {
-    margin: 5px 0;
+    margin: 0;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -116,10 +119,6 @@ body {
     font-weight: bold;
     font-size: 18px;
 }
-/*
-.contact a:hover {
-    color: #666666;  Optional: Add a hover effect with a slightly lighter grey 
-}*/
 
 /* Media Queries */
 @media (max-width: 767px) {
@@ -132,6 +131,20 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         min-height: 40vh; /* Set a smaller height for mobile */    
+    }
+    .logo-image {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 30px;
+    }
+
+    .text-content h1, .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
     }
     
     /* About Section */
@@ -163,33 +176,7 @@ body {
         text-align: left;
         padding: 5px;
     }
-
-    /* Contact Section */
-    .contact {
-        width: 100%;
-        padding: 10px; /* Adjust as needed for inner spacing */
-        margin: 0; /* No outer margin to remove gaps */
-        background-color: #7e8bee;
-        color: black;
-        text-align: left;
-        border-radius: 0; /* Remove rounded corners */
-        display: flex;
-        flex-direction: column; /* Arrange content in a column on mobile */
-        align-items: center;
-    }
-
-    .contact-image {
-        width: 100%;
-        height: auto;
-        margin-bottom: 15px; /* Adds spacing between image and text */
-    }
-
-    .contact-info {
-        width: 100%;
-        text-align: left;
-    }
-
-    .text-content, .about-content, .contact-info {
+    .text-content, .about-content {
         display: flex;
         flex-direction: column;
     }
@@ -200,18 +187,31 @@ body {
         margin: auto;
     }
 
-    .logo-image {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        height: 30px;
+     /* Contact Section */
+    .contact {
+        flex-direction: column; /* Stack header and info vertically */
+        padding: 20px;
+        text-align: center; /* Optional: center-aligns text on mobile */
     }
 
-    .text-content h1, .banner h1 {
-        font-size: 36px;
+    .contact-header {
+        width: 100%;
+        justify-content: center; /* Center-align the image and heading on mobile */
+        margin-bottom: 10px; /* Space between header and contact info */
+    }
+    .contact-image {
+        width: 40%; /* Adjust percentage as needed for mobile */
+        margin-right: 10px; /* Space between image and heading on mobile */
     }
 
-    .banner p {
-        font-size: 18px;
+    .contact-info {
+        width: 100%;
     }
+
+    .contact-info p {
+        margin-top: 10px;
+        text-align: left; /* Optional: aligns text to the left */
+    }
+
+    
 }
