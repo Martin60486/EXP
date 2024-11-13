@@ -19,7 +19,7 @@ body {
     and the top boder of the banner container; 50px between the lower edge of p box and the bottom
     border of the banner container; padding: pushing an element's content inward */
     background-image: url("/EXP/assets/images/vancouver.jpg");
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     color: brown;
     display: flex;
