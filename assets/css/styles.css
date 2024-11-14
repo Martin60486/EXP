@@ -172,7 +172,7 @@ body {
         width: 100%;
         text-align: left; /* Optional: align text to the left */
     }
-    .text-content, .about-content {
+    .text-content {
         display: flex;
         flex-direction: column;
     }
@@ -246,6 +246,14 @@ body {
 
 /* Mobile-specific styling */
 @media (max-width: 767px) {
+    .text-content h1, .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
     .contact {
         flex-direction: column; /* Stack everything vertically */
         align-items: center; /* Center-aligns the items */
