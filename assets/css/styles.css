@@ -191,14 +191,17 @@ body {
         flex-direction: column; /* Stack header and info vertically */
         padding: 20px;
         text-align: center; /* Optional: center-aligns text on mobile */
+    
     }
 
     .contact-header {
-        flex-direction: row;
+        display: flex;
+        align-items: flex-start; /* Align items to the top-left */
+        justify-content: flex-start; /* Align content to the left */
         width: 100%;
-        justify-content: left; /* Center-align the image and heading on mobile */
         margin-bottom: 10px; /* Space between header and contact info */
         align-items: center; /*vertically*/
+        margin-left: 5px;
     }
 
     .contact-image {
