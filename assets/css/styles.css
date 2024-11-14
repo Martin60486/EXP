@@ -109,6 +109,7 @@ body {
 }
 .contact-info p {
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .email-link {
@@ -148,10 +149,12 @@ body {
 
     .text-content h1, .banner h1 {
         font-size: 36px;
+        margin-top: -15px;
     }
 
     .banner p {
         font-size: 18px;
+        margin-top: -15px;
     }
     
     /* About Section */
@@ -216,6 +219,7 @@ body {
     .contact-info p {
         margin-top: 10px;
         text-align: left; /* Optional: aligns text to the left */
+        font-weight: bold;
     }
 }
 
