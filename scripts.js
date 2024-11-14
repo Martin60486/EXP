@@ -9,9 +9,11 @@ function loadContactHTML() {
                     <h2>Contact us:</h2>
                 </div>
                 <div class="contact-info">
-                    <p>Email: info@expaccounting.ca<br>
-                       Phone: 604-838-9028; 778-918-8898<br>
-                       Feel free to reach out via email or telephone for any inquiries!</p>
+                    <p>
+                        Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
+                        Phone: 604-838-9028; 778-918-8898<br>
+                        Feel free to reach out via email or telephone for any inquiries!
+                    </p>
                 </div>
             </div>
         `;
@@ -23,9 +25,11 @@ function loadContactHTML() {
                 </div>
                 <div class="contact-info">
                     <h2>Contact us:</h2>
-                    <p>Email: info@expaccounting.ca<br>
-                       Phone: 604-838-9028; 778-918-8898<br>
-                       Feel free to reach out via email or telephone for any inquiries!</p>
+                    <p>
+                        Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
+                        Phone: 604-838-9028; 778-918-8898<br>
+                        Feel free to reach out via email or telephone for any inquiries!
+                    </p>
                 </div>
             </div>
         `;

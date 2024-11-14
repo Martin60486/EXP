@@ -111,17 +111,16 @@ body {
     margin-top: 10px;
 }
 
-.contact-info a:hover {
-    margin: 0;
-    color: white;
+.email-link {
+    color: black; /* Regular color */
+    text-decoration: none; /* Remove underline by default */
     font-weight: bold;
-    cursor: pointer;
 }
-.contact a {
-    color: black; /* Change this to #333333 for a deep grey */
-    text-decoration: none; /* Optional: Remove underline */
-    font-weight: bold;
-    font-size: 18px;
+
+.email-link:hover {
+    color: blue; /* Change color on hover */
+    text-decoration: underline; /* Optional: add underline on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
 }
 
 /* Media Queries */
@@ -141,6 +140,10 @@ body {
         top: 10px;
         left: 10px;
         height: 30px;
+    }
+    .text-content {
+        margin-top: 0px;
+        padding-top: 0px;
     }
 
     .text-content h1, .banner h1 {
@@ -199,7 +202,7 @@ body {
     }
 
     .contact-image {
-        width: 40%; /* Adjust percentage as needed for mobile */
+        width: 30%; /* Adjust percentage as needed for mobile */
         margin-right: 10px; /* Space between image and heading on mobile */
     }
 
