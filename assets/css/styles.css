@@ -101,7 +101,7 @@ body {
 }
 
 .contact-info {
-    flex: 1; /* Ensures contact info takes remaining space */
+    flex-direction: column;
 }
 
 .contact-info h2 {
