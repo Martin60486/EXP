@@ -153,32 +153,24 @@ body {
     
     /* About Section */
     .about {
-        width: 100%;
-        padding: 0px; /* Adjust as needed for inner spacing */
-        margin: 0; /* No outer margin */
-        background-color: #7e8bee;
-        color: white;
-        border-radius: 0; /* Remove rounded corners */
+        display: block; /* Switch to block layout on mobile */
     }
 
     .about-content {
-        align-items: center; /* vertically */
-        width: 100%;
+        display: block;/* Disable flex on mobile */
     }
 
     .about-image {
-        max-width: none;
-        width: 100% !important;
-        height: auto !important;
-        box-sizing: border-box;
-        margin: 5px;
-        padding: 0;
+        width: 40%; /* Image width for mobile; adjust as needed */
+        float: left; /* Float the image to make text wrap around it */
+        margin-right: 10px; /* Space between image and text */
+        margin-bottom: 10px; /* Adds space at the bottom of the image */
     }
 
     .about-content p {
+        display: block;
         width: 100%;
-        text-align: left;
-        padding: 5px;
+        text-align: left; /* Optional: align text to the left */
     }
     .text-content, .about-content {
         display: flex;
@@ -203,6 +195,7 @@ body {
         width: 100%;
         justify-content: center; /* Center-align the image and heading on mobile */
         margin-bottom: 10px; /* Space between header and contact info */
+        align-items: center; /*vertically*/
     }
 
     .contact-image {
