@@ -1,4 +1,20 @@
 title: "EXP Accounting"
 description: "Chartered Professional Accountants in Vancouver"
-baseurl: "" # Leave empty if deploying to the root of a domain
-url: "https://martin60486.github.io/EXP" # Replace with your GitHub Pages URL
+baseurl: "" # Leave empty if deploying to the root of a custom domain: www.expaccounting.ca. 
+# This ensures that all site files appear as if they are served from the root
+# of your custom domain, not from a subdirectory like /EXP.
+url: "https://martin60486.github.io/#EXP" # true domain at github pages
+
+#CNAME Record:
+#You added a CNAME record in GoDaddy that maps www.expaccounting.ca to martin60486.github.io. 
+#This tells browsers that requests for your custom domain should be resolved to GitHub Pages.
+
+#GitHub Pages Settings:
+#You configured your GitHub Pages repository to recognize and serve your site under 
+#www.expaccounting.ca. The CNAME file in your repository ensures GitHub knows your custom 
+# domain is linked to the repository.
+
+#Outcome:
+# When someone visits www.expaccounting.ca, the DNS resolves to martin60486.github.io/EXP, 
+# but GitHub serves the content as if it's from the root of www.expaccounting.ca. 
+# Thanks to the _config.yml setup (baseurl: ""), the site behaves correctly without showing /EXP in the URLs.
