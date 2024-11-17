@@ -12,7 +12,7 @@ body {
 
 /* Banner Section */
 .banner {
-    background-image: url("./assets/images/vancouver.jpg");
+    background-image: url("../images/vancouver.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
