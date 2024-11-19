@@ -132,6 +132,7 @@ body {
 
     .banner {
         background-size: cover;
+        background-color: #fffffb;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 40vh; /* Set a smaller height for mobile */    
