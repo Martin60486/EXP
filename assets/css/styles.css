@@ -16,7 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #f9f9f9f1; /* Add a color that matches the image */
+    background-color: #fffffb; /* Add a color that matches the image */
     background-blend-mode: multiply;
     min-height: 60vh;
     display: flex;
