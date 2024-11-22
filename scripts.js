@@ -1,20 +1,52 @@
 
 
+// Load and Initialize Contact Section
 function loadContactHTML() {
     const container = document.getElementById("contact-container");
+    if (!container) return;
 
-    if (!container) {
-        console.error("Contact container not found!");
-        return;
-    }
-
-    // Dynamically adjust layout based on screen width without overwriting static content
     if (window.innerWidth <= 767) {
-        container.querySelector(".contact").classList.add("mobile-layout");
-        container.querySelector(".contact-image").classList.add("mobile-image");
+        container.innerHTML = `
+            <div class="contact">
+                <div class="contact-header">
+                    <img src="./assets/images/telephone.jpg" alt="Contact image" class="contact-image">                  
+                    <h2>Contact us:</h2>
+                </div>
+                <div class="contact-info">
+                    <p>
+                        Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
+                        Phone: 604-838-9028; 778-918-8898<br>
+                        Feel free to reach out via email or telephone for any inquiries!
+                    </p>
+                </div>
+            </div>
+            <div class="blog-link">
+                <p>
+                    <a href="./blog.html">Post your questions or comments and read answers on the blog</a>
+                </p>
+            </div>
+        `;
     } else {
-        container.querySelector(".contact").classList.remove("mobile-layout");
-        container.querySelector(".contact-image").classList.remove("mobile-image");
+        container.innerHTML = `
+            <div class="contact">
+                <div class="contact-image-wrapper">
+                    <img src="./assets/images/telephone.jpg" alt="Contact image" class="contact-image">    
+                </div>
+                <div class="contact-info">
+                    <h2>Contact us:</h2>
+                    <p>
+                        Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
+                        Phone: 604-838-9028; 778-918-8898<br>
+                        Feel free to reach out via email or telephone for any inquiries!
+                    </p>
+                </div>
+            </div>
+            <div class="blog-link">
+                <p>
+                    <a href="./blog.html">Post your questions or comments and read answers on the blog</a>
+                </p>
+            </div>
+        `;
     }
 }
 
