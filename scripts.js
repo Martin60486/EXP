@@ -1,143 +1,94 @@
-// Supabase Initialization
-const SUPABASE_URL = "https://fsejygujfoxbioyxwnex.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzZWp5Z3VqZm94YmlveXh3bmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY2NTIsImV4cCI6MjA0NzcxMjY1Mn0.-OZArZquHFdPqC_aO5w4PWEmmXwWB0_4k5AqVEB8G6w";
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-console.log("Supabase initialized:", supabase);
+// Supabase initialization
+const supabaseUrl = 'https://fsejygujfoxbioyxwnex.supabase.co'; // Replace with your Supabase URL
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzZWp5Z3VqZm94YmlveXh3bmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY2NTIsImV4cCI6MjA0NzcxMjY1Mn0.-OZArZquHFdPqC_aO5w4PWEmmXwWB0_4k5AqVEB8G6w'; // Replace with your Supabase Key
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-// Load Categories into the Select Dropdown
-async function loadCategories() {
-    try {
-        // Fetch categories from Supabase
-        const { data: categories, error } = await supabase.from("categories").select("*");
+// Ensure DOM is fully loaded before running scripts
+document.addEventListener("DOMContentLoaded", function () {
+    // Load categories and questions when the page loads
+    loadCategories();
+    loadQuestions();
 
-        if (error) {
-            console.error("Error fetching categories:", error);
-            alert("Failed to load categories. Please check your database permissions.");
-            return;
-        }
+    // Attach event listener to the form
+    document.getElementById("question-form").addEventListener("submit", handleFormSubmit);
+});
 
-        if (!categories || categories.length === 0) {
-            console.warn("No categories found in the database.");
-            alert("No categories available to display. Please add categories to the database.");
-            return;
-        }
+// Handle form submission
+async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
 
-        console.log("Fetched categories:", categories); // Log fetched categories for debugging
-
-        // Populate the dropdown menu
-        const categorySelect = document.getElementById("category");
-        categorySelect.innerHTML = ""; // Clear existing options
-
-        categories.forEach((category) => {
-            const option = document.createElement("option");
-            option.value = category.id; // Use category ID as the value
-            option.textContent = category.name; // Display category name
-            categorySelect.appendChild(option);
-        });
-
-        console.log("Categories successfully loaded into the dropdown.");
-    } catch (error) {
-        console.error("Unexpected error in loadCategories:", error);
-        alert("An unexpected error occurred. Please try again.");
-    }
-}
-
-// Handle Question Submission
-async function submitQuestion(event) {
-    event.preventDefault();
-
+    const name = document.getElementById("name").value || "anonymous";
     const category = document.getElementById("category").value;
     const question = document.getElementById("question").value;
 
-    if (!category || !question) {
-        alert("Category and question are required.");
-        console.warn("Form submission aborted: Missing category or question.");
-        return;
-    }
-
     try {
-        const { error } = await supabase.from("questions").insert([{ category_id: category, question }]);
-        if (error) throw error;
+        const { data, error } = await supabase
+            .from('questions')
+            .insert([
+                { name, category_id: parseInt(category), question }
+            ]);
 
-        alert("Question submitted successfully!");
-        console.log("Question submitted:", { category_id: category, question });
-        loadQuestions(); // Reload questions after submission
-    } catch (error) {
-        console.error("Error submitting question:", error);
-        alert("Failed to submit question. Please try again later.");
+        if (error) {
+            console.error("Error inserting question:", error.message);
+        } else {
+            console.log("Question added:", data);
+            loadQuestions(); // Refresh the questions list
+        }
+    } catch (err) {
+        console.error("Unexpected error:", err.message);
     }
+
+    // Clear the form
+    document.getElementById("question-form").reset();
 }
 
-// Load Questions and Display Them
+// Load categories into the dropdown menu
+async function loadCategories() {
+    const categories = [
+        { id: 1, name: "Individual Tax" },
+        { id: 2, name: "Corporate and Trust Tax" },
+        { id: 3, name: "Bookkeeping and Payroll" },
+        { id: 4, name: "Non-Resident Tax" },
+        { id: 5, name: "Not-for-Profit Accounting" },
+        { id: 6, name: "Others" }
+    ];
+
+    const categorySelect = document.getElementById("category");
+    categories.forEach(category => {
+        const option = document.createElement("option");
+        option.value = category.id;
+        option.textContent = category.name;
+        categorySelect.appendChild(option);
+    });
+}
+
+// Load questions and display them in the container
 async function loadQuestions() {
     try {
-        const { data: questions, error } = await supabase
-            .from("questions")
-            .select("*")
-            .order("category_id", { ascending: true });
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .order('category_id', { ascending: true });
 
-        if (error) throw error;
+        if (error) {
+            console.error("Error loading questions:", error.message);
+            return;
+        }
 
         const questionsContainer = document.getElementById("questions-container");
-        questionsContainer.innerHTML = ""; // Clear existing questions
+        questionsContainer.innerHTML = ""; // Clear existing content
 
-        questions.forEach((question) => {
-            const questionDiv = document.createElement("div");
-            questionDiv.textContent = `${question.category_id}: ${question.question}`;
-            questionsContainer.appendChild(questionDiv);
+        data.forEach(question => {
+            const questionElement = document.createElement("div");
+            questionElement.innerHTML = `
+                <p><strong>Category:</strong> ${question.category_id}</p>
+                <p><strong>Name:</strong> ${question.name}</p>
+                <p><strong>Question:</strong> ${question.question}</p>
+                <p><strong>Answer:</strong> ${question.answer || "No answer yet"}</p>
+            `;
+            questionsContainer.appendChild(questionElement);
         });
-    } catch (error) {
-        console.error("Error loading questions:", error);
-        alert("Failed to load questions. Please try again later.");
+    } catch (err) {
+        console.error("Unexpected error:", err.message);
     }
 }
-
-// Load and Initialize Contact Section
-function loadContactHTML() {
-    const container = document.getElementById("contact-container");
-    if (!container) return;
-
-    if (window.innerWidth <= 767) {
-        // Mobile View
-        container.innerHTML = `
-            <div class="contact">
-                <div class="contact-header">
-                    <img src="./assets/images/telephone.jpg" alt="Contact image" class="contact-image">                  
-                    <h2>Contact us:</h2>
-                </div>
-                <div class="contact-info">
-                    <p>
-                        Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
-                        Phone: 604-838-9028; 778-918-8898<br>
-                        Feel free to reach out via email or telephone for any inquiries!
-                    </p>
-                </div>
-            </div>
-            <div class="blog-link">
-                <p>
-                    <a href="./blog.html">Post your questions or comments and read answers on the blog</a>
-                </p>
-            </div>
-        `;
-    } else {
-        // Desktop View
-        container.innerHTML = `
-            <div class="contact">
-                <h2>Contact us</h2>
-                <div class="contact-info">
-                    <p>
-                        Email: <a href="mailto:info@expaccounting.ca">info@expaccounting.ca</a><br>
-                        Phone: 604-838-9028; 778-918-8898
-                    </p>
-                </div>
-            </div>
-        `;
-    }
-}
-
-// Initialize Page Content
-document.addEventListener("DOMContentLoaded", () => {
-    loadCategories();
-    loadQuestions();
-    loadContactHTML();
-});
