@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Test</title>
+    <!-- Include Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+    <h1>Supabase Test</h1>
+    <script>
+        // Ensure Supabase library is loaded
+        console.log("Supabase library loaded:", typeof supabase);
+// Supabase Initialization
+        const SUPABASE_URL = 'https://fsejygujfoxbioyxwnex.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzZWp5Z3VqZm94YmlveXh3bmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMzY2NTIsImV4cCI6MjA0NzcxMjY1Mn0.-OZArZquHFdPqC_aO5w4PWEmmXwWB0_4k5AqVEB8G6w'; // Replace with your actual Anon Key
+
+        const mySupabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        console.log("Supabase initialized:", mySupabase);
+
+        // Test Query
+        async function testSupabase() {
+            console.log("Running test query...");
+            try {
+                const { data, error } = await mySupabase.from('categories').select('*');
+                if (error) {
+                    console.error("Error fetching categories:", error);
+                } else {
+                    console.log("Fetched categories:", data);
+                }
+            } catch (err) {
+                console.error("Unexpected error during query:", err);
+            }
+        }
+
+        // Run the test
+        testSupabase();
+    </script>
+</body>
+</html>
