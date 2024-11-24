@@ -64,25 +64,11 @@ title: Home
 <!-- Contact Section -->
 <!-- Link to the external JavaScript file -->
 
-<section id="contact-container">
-    <div class="contact">
-        <div class="contact-image-wrapper">
-            <img src="./assets/images/telephone.jpg" alt="Contact image" class="contact-image">
-        </div>
-        <div class="contact-info">
-            <h2>Contact us:</h2>
-            <p>
-                Email: <a href="mailto:info@expaccounting.ca" class="email-link">info@expaccounting.ca</a><br>
-                Phone: 604-838-9028; 778-918-8898<br>
-                Feel free to reach out via email or telephone for any inquiries!
-            </p>
-        </div>
-    </div>
-</section>
+<section id="contact-container"></section>
 <p style="text-align: center; margin-top: 1em;">
     <a href="{{ "/blog.html" | relative_url }}" style="font-weight: bold; color: #0056b3;">Visit our Blog</a> to ask questions!
 </p>
-
+<script src="./scripts.js"></script>
 <!--<section> has two children: <img> and <div>; .contact->flex align the two children side by side-->
 <!--<div> has four children <h2> and three <p> -->
 
