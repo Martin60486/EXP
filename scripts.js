@@ -28,10 +28,10 @@ async function loadCategories() {
         const categorySelect = document.getElementById("category");
         categorySelect.innerHTML = ""; // Clear existing options
 
-        categories.forEach((category) => {
-            const option = document.createElement("option");
-            option.value = category.id; // Use category ID as the value
-            option.textContent = category.name; // Display category name
+        categories.forEach((category_row) => {  //"Each" in the dataset categories is a datarow 
+            const option = document.createElement("option"); //create an option element, but not ById
+            option.value = category_row.id; // Use category ID as the value=>option.value is integer
+            option.textContent = category_row.name; // Display category name
             categorySelect.appendChild(option);
         });
     } catch (error) {
@@ -44,16 +44,19 @@ async function loadCategories() {
 async function submitQuestion(event) {
     event.preventDefault();
 
-    const category = document.getElementById("category").value;
-    const question = document.getElementById("question").value;
-
-    if (!category || !question) {
+    const category_int = document.getElementById("category").value;
+    const question_txt = document.getElementById("question").value;
+//getElementById(...) return html element <select> and <textArea>, with value as integer and text respectively
+//see blog.md:<select id="category" name="category"></select> and <textarea id="question" name="question" required></textarea>
+//categorySelect's value is the currently selected <option> element's value; textarea question's value is whan is entered
+    if (!category_int || !question_txt) {
         alert("Category and question are required.");
         return;
     }
 
     try {
-        const { error } = await mySupabase.from("questions").insert([{ category_id: category, question }]);
+        const { error } = await mySupabase.from("questions").insert([{ category_id: category_int, question: question_txt }]);
+        //insert into fields category_id and question
         if (error) throw error;
 
         alert("Question submitted successfully!");
