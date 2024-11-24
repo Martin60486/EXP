@@ -12,9 +12,6 @@ title: Home
         </p>
     </div>
 </section>
-<p style="text-align: center; margin-top: 1em;">
-    <a href="{{ "/blog.html" | relative_url }}" style="font-weight: bold; color: #0056b3;">Visit our Blog</a> to ask questions!
-</p>
 
 <!-- about section has only one direct child: <div>, flex is not necessary-->
 <!-- <div> has two children: img and <p>; class .about-content-> flex align them horizontally-->
@@ -65,9 +62,7 @@ title: Home
 <!-- Link to the external JavaScript file -->
 
 <section id="contact-container"></section>
-<p style="text-align: center; margin-top: 1em;">
-    <a href="{{ "/blog.html" | relative_url }}" style="font-weight: bold; color: #0056b3;">Visit our Blog</a> to ask questions!
-</p>
+
 <script src="{{ '/scripts-index.js' | relative_url }}"></script>
 <!--<section> has two children: <img> and <div>; .contact->flex align the two children side by side-->
 <!--<div> has four children <h2> and three <p> -->
