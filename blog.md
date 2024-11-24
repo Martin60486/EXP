@@ -23,4 +23,4 @@ layout: default
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <!-- Include Custom Scripts -->
-<script src="./scripts.js"></script>
+<script src="./scripts-blog.js"></script>

@@ -68,7 +68,7 @@ title: Home
 <p style="text-align: center; margin-top: 1em;">
     <a href="{{ "/blog.html" | relative_url }}" style="font-weight: bold; color: #0056b3;">Visit our Blog</a> to ask questions!
 </p>
-<script src="./scripts.js"></script>
+<script src="{{ '/scripts-index.js' | relative_url }}"></script>
 <!--<section> has two children: <img> and <div>; .contact->flex align the two children side by side-->
 <!--<div> has four children <h2> and three <p> -->
 
