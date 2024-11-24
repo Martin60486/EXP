@@ -1,26 +1,24 @@
 ---
 layout: default
+title: Blog
 ---
+<link rel="stylesheet" href="./assets/css/styles-blog.css">
 
-<h1>Submit Your Questions</h1>
-<form id="question-form" onsubmit="submitQuestion(event)">
-    <label for="name">Name (optional):</label>
-    <input type="text" id="name" name="name" placeholder="anonymous">
-
-    <label for="category">Category:</label>
-    <select id="category" name="category"></select>
-
-    <label for="question">Your Question:</label>
-    <textarea id="question" name="question" required></textarea>
-
-    <button type="submit">Submit</button>
+<h2>Submit Your Questions</h2>
+<form id="question-form">
+    <input type="text" id="name" name="name" placeholder="Your Name (optional)">
+    <select id="category" name="category">
+        <option value="">Select a Category</option>
+    </select>
+    <textarea id="question" name="question" placeholder="Your Question"></textarea>
+    <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
 </form>
 
-<h2>Questions and Answers</h2>
-<div id="questions-container"></div>
-
-<!-- Include Supabase Library -->
+<section id="questions-container">
+    <!-- Questions will be displayed dynamically -->
+</section>
+<!-- Include the Supabase Library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
-<!-- Include Custom Scripts -->
+<!-- Include Your Custom Script -->
 <script src="./scripts-blog.js"></script>
