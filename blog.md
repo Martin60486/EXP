@@ -3,6 +3,7 @@ layout: default
 title: Blog
 ---
 <link rel="stylesheet" href="./assets/css/styles-blog.css">
+<a href="./login.html">Admin Login</a>
 
 <h2>Submit Your Questions</h2>
 <form id="question-form">
