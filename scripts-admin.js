@@ -3,16 +3,13 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
 const BASE_URL = 'https://fsejygujfoxbioyxwnex.supabase.co';
 const asupabase = supabase.createClient(BASE_URL, API_KEY);
 
-
 // Login functionality
 document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
-  
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
   
     try {
-      // Fetch all records from tblusers
       const { data: users, error } = await asupabase
         .from('tblusers')
         .select('*');
@@ -21,12 +18,11 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
         throw new Error(error.message);
       }
   
-      // Check if the username and password match any record
       const user = users.find(u => u.name === username && u.pwd === password);
   
       if (user) {
-        localStorage.setItem('loggedIn', true); // Save login state in local storage
-        window.location.href = './admin.html'; // Redirect to admin page
+        localStorage.setItem('loggedIn', true);
+        window.location.href = '/admin.html';
       } else {
         document.getElementById('login-message').textContent = 'Invalid username or password';
       }
@@ -36,12 +32,9 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     }
   });
   
-  // Admin functionality (CRUD operations)
+  // Admin functionality
   document.addEventListener('DOMContentLoaded', async () => {
-    if (window.location.pathname.includes('admin.html') && !localStorage.getItem('loggedIn')) {
-      window.location.href = './login.html';
-      return;
-    }
+    if (!window.location.pathname.includes('admin.html')) return;
   
     try {
       const { data: questions, error } = await asupabase
@@ -53,29 +46,38 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
       }
   
       const tableBody = document.querySelector('#questions-table tbody');
-      tableBody.innerHTML = questions.map(q => `
-        <tr>
-          <td>${q.id}</td>
-          <td>${q.question}</td>
-          <td>${q.answer || 'No answer yet'}</td>
-          <td>
-            <button onclick="deleteQuestion(${q.id})">Delete</button>
-          </td>
-        </tr>
-      `).join('');
+      if (tableBody) {
+        tableBody.innerHTML = questions.map(q => `
+          <tr>
+            <td>${q.id}</td>
+            <td>${q.question}</td>
+            <td>${q.answer || 'No answer yet'}</td>
+            <td>
+              <button onclick="deleteQuestion(${q.id})">Delete</button>
+            </td>
+          </tr>
+        `).join('');
+      } else {
+        console.warn('Questions table not found in the DOM.');
+      }
   
-      document.getElementById('answer-form').addEventListener('submit', async (e) => {
+      document.getElementById('answer-form')?.addEventListener('submit', async (e) => {
         e.preventDefault();
         const id = document.getElementById('question-id').value;
         const answer = document.getElementById('answer').value;
   
-        await asupabase
-          .from('questions')
-          .update({ answer })
-          .eq('id', id);
+        try {
+          await asupabase
+            .from('questions')
+            .update({ answer })
+            .eq('id', id);
   
-        alert('Answer submitted');
-        location.reload();
+          alert('Answer submitted');
+          location.reload();
+        } catch (err) {
+          console.error('Answer Submission Error:', err);
+          alert('Failed to submit the answer. Please try again later.');
+        }
       });
     } catch (err) {
       console.error('Admin Error:', err);
@@ -83,6 +85,7 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     }
   });
   
+  // Delete question functionality
   async function deleteQuestion(id) {
     try {
       await asupabase
