@@ -18,6 +18,11 @@ title: Blog
 <section id="questions-container">
     <!-- Questions will be displayed dynamically -->
 </section>
+<script>
+  if (localStorage.getItem('loggedIn')) {
+    document.write('<a href="./admin.html" style="font-weight:bold;">Go to Admin Page</a>');
+  }
+</script>
 <!-- Include the Supabase Library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 

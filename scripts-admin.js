@@ -21,6 +21,7 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     if (user) {
       // Login successful, redirect to admin page
       localStorage.setItem('loggedIn', true);
+      alert('Login successful!');
       window.location.href = './admin.html';
     } else {
       document.getElementById('login-message').textContent = 'Invalid username or password';
@@ -31,7 +32,13 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
   }
 });
 document.addEventListener('DOMContentLoaded', async () => {
-  if (!window.location.pathname.includes('admin.html')) return;
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem('loggedIn');
+    if (!isLoggedIn && window.location.pathname.includes('admin.html')) {
+      // Redirect to login page if not logged in
+      alert('Please log in first!');
+      window.location.href = './login.html';
+    }
 
   try {
     const { data: questions, error } = await asupabase
@@ -61,6 +68,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Admin Error:', err);
     alert('An error occurred while loading questions. Please try again later.');
   }
+});
+document.getElementById('logout-btn')?.addEventListener('click', () => {
+  localStorage.removeItem('loggedIn');
+  alert('You have been logged out.');
+  window.location.href = './login.html';
 });
 
 async function saveChanges(id, btn) {

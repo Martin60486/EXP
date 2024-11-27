@@ -3,9 +3,10 @@ layout: default
 title: Admin
 ---
 <link rel="stylesheet" href="./assets/css/admin.css">
-<h2>Admin Page</h2>
+
 <nav>
   <a href="./index.html">Home</a> | <a href="./blog.html">Blog</a>
+  <button id="logout-btn" style="background:none; border:none; color:#0f4c81; cursor:pointer; font-weight:bold;">Log Out</button>
 </nav>
 <div id="admin-section">
   <h3>Questions</h3>
