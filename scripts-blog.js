@@ -63,7 +63,11 @@ async function loadQuestions() {
         questions.forEach((q) => {
             const questionCard = document.createElement("div");
             questionCard.className = "question-card";
-            questionCard.innerHTML = `<h3>Asked by ${q.name}: ${q.question}</h3><p>Answered by EXP: ${q.answer}</p>`;
+            questionCard.innerHTML = `
+                <h3>Asked by ${q.name}: ${q.question}</h3>
+                <p style="font-weight: bold; color: #333;">Answered by EXP:</p>
+                <p>${q.answer}</p>
+            `;
             container.appendChild(questionCard);
         });
     } catch (error) {

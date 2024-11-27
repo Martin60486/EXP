@@ -47,7 +47,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  white-space: pre-wrap; /* Preserve line breaks */
+  white-space: pre-wrap; /* Preserve line breaks; table includes all <table>s in md */
 }
 
 table th, table td {

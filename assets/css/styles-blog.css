@@ -19,6 +19,7 @@ h1, h2 {
     padding: 20px;
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Form styles */
@@ -48,6 +49,7 @@ form textarea {
     flex: 2;
     height: 80px;
     resize: none;
+    white-space: pre-wrap;
 }
 
 form button {
@@ -67,24 +69,35 @@ form i {
 }
 
 /* Question card styles */
+#question-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    width: 90%; /* Maintain width */
+    margin: 20px auto; /* Center the form */
+}
 #questions-container {
-    margin-top: 20px;
+    width:90%;
+    margin: 20px auto;
+    white-space: pre-wrap;
 }
 
 .question-card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 15px auto; /* Center each card */
     background-color: #f8f8f8;
+    max-width: 800px; /* Restrict width for better readability */
 }
 
-.question-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.question-card h3, .question-card p {
+    margin: 10px 0; /* Add spacing between lines */
 }
+
 
 .question-card p {
     font-size: 14px;
