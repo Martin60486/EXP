@@ -2,8 +2,6 @@
 const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzZWp5Z3VqZm94YmlveXh3bmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2MzIwMjcsImV4cCI6MjA0ODIwODAyN30.l14Ik580RCfmeW37Q6RjrNsjp-mFC91xIE0yg2JC7HI';
 const BASE_URL = 'https://fsejygujfoxbioyxwnex.supabase.co';
 const asupabase = supabase.createClient(BASE_URL, API_KEY);
-
-// Login functionality
 document.getElementById('login-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const username = document.getElementById('username').value.trim();
@@ -21,8 +19,9 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     const user = users.find(u => u.name === username && u.pwd === password);
 
     if (user) {
+      // Login successful, redirect to admin page
       localStorage.setItem('loggedIn', true);
-      window.location.href = '/admin.html';
+      window.location.href = './admin.html';
     } else {
       document.getElementById('login-message').textContent = 'Invalid username or password';
     }
@@ -31,15 +30,13 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     document.getElementById('login-message').textContent = 'An error occurred during login. Please try again later.';
   }
 });
-
-// Admin functionality
 document.addEventListener('DOMContentLoaded', async () => {
   if (!window.location.pathname.includes('admin.html')) return;
 
   try {
     const { data: questions, error } = await asupabase
       .from('questions')
-      .select('*, categories(name)')
+      .select('*')
       .order('id', { ascending: true });
 
     if (error) {
@@ -51,50 +48,39 @@ document.addEventListener('DOMContentLoaded', async () => {
       tableBody.innerHTML = questions.map(q => `
         <tr>
           <td>${q.id}</td>
-          <td>${q.question}</td>
-          <td>${q.categories?.name || 'Uncategorized'}</td>
-          <td>${q.answer || 'No answer yet'}</td>
+          <td contenteditable="true" data-column="question">${q.question}</td>
+          <td contenteditable="true" data-column="answer">${q.answer || ''}</td>
           <td>
-            <button onclick="selectQuestion(${q.id}, '${q.question.replace(/'/g, "\\'")}', '${(q.answer || '').replace(/'/g, "\\'")}')">Edit</button>
-            <button onclick="deleteQuestion(${q.id})">Delete</button>
+            <button class="save-btn" onclick="saveChanges(${q.id}, this)">Save</button>
+            <button class="delete-btn" onclick="deleteQuestion(${q.id})">Delete</button>
           </td>
         </tr>
       `).join('');
     }
-
-    document.getElementById('answer-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const id = document.getElementById('question-id').value;
-      const updatedQuestion = document.getElementById('question').value;
-      const updatedAnswer = document.getElementById('answer').value;
-
-      try {
-        await asupabase
-          .from('questions')
-          .update({ question: updatedQuestion, answer: updatedAnswer })
-          .eq('id', id);
-
-        alert('Changes saved successfully');
-        location.reload();
-      } catch (err) {
-        console.error('Save Error:', err);
-        alert('Failed to save changes. Please try again later.');
-      }
-    });
   } catch (err) {
     console.error('Admin Error:', err);
     alert('An error occurred while loading questions. Please try again later.');
   }
 });
 
-// Function to populate form with selected question and answer
-function selectQuestion(id, question, answer) {
-  document.getElementById('question-id').value = id;
-  document.getElementById('question').value = question;
-  document.getElementById('answer').value = answer;
+async function saveChanges(id, btn) {
+  const row = btn.closest('tr');
+  const question = row.querySelector('[data-column="question"]').textContent.trim();
+  const answer = row.querySelector('[data-column="answer"]').textContent.trim();
+
+  try {
+    await asupabase
+      .from('questions')
+      .update({ question, answer })
+      .eq('id', id);
+
+    alert('Changes saved successfully');
+  } catch (err) {
+    console.error('Save Error:', err);
+    alert('Failed to save changes. Please try again later.');
+  }
 }
 
-// Function to delete a question
 async function deleteQuestion(id) {
   try {
     await asupabase
