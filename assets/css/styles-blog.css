@@ -100,6 +100,8 @@ form i {
     border: 1px solid #ddd; /* Visual distinction for the editable field */
     border-radius: 4px; /* Consistent rounded corners */
     font-family: inherit; /* Use the same font as the parent */
+    font-size: 16px; /* Adjust to match the admin page */
+    line-height: 1.5; /* Ensure proper line spacing */
     white-space: pre-wrap; /* Preserve line breaks */
     word-wrap: break-word; /* Allow word wrapping */
     min-height: 50px; /* Minimum height for visibility */
