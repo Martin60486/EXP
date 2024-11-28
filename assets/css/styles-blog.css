@@ -94,6 +94,17 @@ form i {
     max-width: 800px; /* Restrict width for better readability */
 }
 
+.question-card pre[contenteditable="true"] {
+    background-color: #fff9e6; /* Highlight editable area */
+    padding: 10px; /* Space inside editable area */
+    border: 1px solid #ddd; /* Visual distinction for the editable field */
+    border-radius: 4px; /* Consistent rounded corners */
+    font-family: inherit; /* Use the same font as the parent */
+    white-space: pre-wrap; /* Preserve line breaks */
+    word-wrap: break-word; /* Allow word wrapping */
+    min-height: 50px; /* Minimum height for visibility */
+}
+
 .question-card h3 { /* question*/
     margin-top: 5px; /* Reduce space above the question */
     margin-bottom: 5px; /* Reduce space below "Asked by" */
@@ -117,6 +128,37 @@ form i {
     margin-top: 5px; /* Adjust space above the answer */
     font-size: 14px; /* Optional: Adjust font size */
     line-height: 1.6; /* Optional: Adjust line height for readability */
+}
+.question-card .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions .save-btn {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.actions .save-btn:hover {
+    background-color: #4cae4c;
+}
+
+.actions .delete-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.actions .delete-btn:hover {
+    background-color: #c9302c;
 }
 
 /* Responsive design */

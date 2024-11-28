@@ -40,7 +40,23 @@ title: Blog
       //document.body.appendChild(adminLink);
     }
   });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginLink = document.getElementById('login-link');
+    const isLoggedIn = localStorage.getItem('loggedIn');
+
+    if (isLoggedIn) {
+      // Change link to "Admin Page" if logged in
+      loginLink.textContent = 'Go to Admin Page';
+      loginLink.href = './admin.html';
+    } else {
+      // Default link to "Login Page"
+      loginLink.textContent = 'Admin Login';
+      loginLink.href = './login.html';
+    }
+  });
 </script>
+
 <!-- Include the Supabase Library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 

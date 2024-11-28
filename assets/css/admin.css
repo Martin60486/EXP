@@ -123,7 +123,7 @@ button.delete-btn:hover {
 }
 
 /* Responsive Design */
-/*@media (max-width: 768px) {*/
+@media (max-width: 768px) {
   #admin-section {
     width: 95%; /* Adjust section width for small screens */
     padding: 10px;
