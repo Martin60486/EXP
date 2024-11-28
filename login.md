@@ -6,7 +6,14 @@ title: Login
 <link rel="stylesheet" href="./assets/css/styles-blog.css">
 
 <div id="login-section">
+ 
+<div id="login-header">
   <h3>Login</h3>
+  <nav id="nav-links">
+    <a href="./index.html">Home</a>
+    <a href="./blog.html">Blog</a>
+  </nav>
+</div>
   <form id="login-form">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>

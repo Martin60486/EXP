@@ -3,7 +3,7 @@ layout: default
 title: Blog
 ---
 <link rel="stylesheet" href="./assets/css/styles-blog.css">
-
+<a href="./index.html" style="font-weight: bold; color: purple; margin-right: 20px; text-align: left;">Home</a>
 <h2>Ask us questions</h2>
 <form id="question-form">
     <input type="text" id="name" name="name" placeholder="Your Name (optional)">

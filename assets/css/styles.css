@@ -136,7 +136,7 @@ body {
         background-color: #fffffb;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 40vh; /* Set a smaller height for mobile */    
+        min-height: 40vh; /* Set a smaller height for mobile */  
     }
     .logo-image {
         position: absolute;
@@ -147,6 +147,7 @@ body {
     .text-content {
         margin-top: 0px;
         padding-top: 0px;
+     
     }
 
     .text-content h1, .banner h1 {

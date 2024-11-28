@@ -9,14 +9,37 @@ body {
 
 h1, h2 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+#login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Add spacing below the header */
+  }
+  
+  /* Navigation links styling */
+  #nav-links {
+    display: flex;
+    gap: 15px; /* Add space between links */
+  }
+  
+  #nav-links a {
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+    color: #0056b3; /* Customize the link color */
+  }
+  
+  #nav-links a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
