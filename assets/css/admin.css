@@ -1,5 +1,6 @@
 /* admin.css */
 
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,16 +12,20 @@ h2 {
   text-align: center;
   color: #333;
 }
+
+/* Navigation Styles */
 nav {
   display: flex;
-  gap: 10px; /* Adds space between items */
+  flex-direction: column; /* Stack nav elements vertically */
   align-items: center;
+  margin-bottom: 0; /* Remove unnecessary space below nav */
 }
 
 .nav-link {
-  text-decoration: none; /* Removes underline */
+  text-decoration: none;
   color: #0f4c81;
   font-weight: bold;
+  margin-bottom: 2px; /* Reduce space between nav elements */
 }
 
 .nav-link:hover {
@@ -33,12 +38,14 @@ nav {
   color: #0f4c81;
   cursor: pointer;
   font-weight: bold;
+  margin-bottom: 2px; /* Ensure consistent spacing with nav links */
 }
 
 .nav-button:hover {
   text-decoration: underline;
 }
 
+/* Admin Section */
 #admin-section {
   width: 80%;
   margin: 20px auto;
@@ -51,20 +58,24 @@ nav {
 h3 {
   color: #0f4c81;
   border-bottom: 2px solid #0f4c81;
+  margin-bottom: 2px; /* Reduce space below "Questions" */
   padding-bottom: 5px;
 }
 
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  white-space: pre-wrap; /* Preserve line breaks; table includes all <table>s in md */
+  margin-top: 0; /* Remove extra space above the table */
+  white-space: pre-wrap; /* Preserve line breaks */
+  font-size: 12px;
 }
 
-table th, table td {
+table th,
+table td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: left;
+  text-align: left !important;
 }
 
 table th {
@@ -80,6 +91,7 @@ table tr:hover {
   background-color: #eaf4ff;
 }
 
+/* Editable Cells */
 table td[contenteditable="true"] {
   background-color: #fff9e6;
 }
@@ -88,6 +100,7 @@ table td[contenteditable="true"]:focus {
   outline: 2px solid #0f4c81;
 }
 
+/* Button Styles */
 button {
   background-color: #5cb85c;
   color: white;
@@ -110,7 +123,7 @@ button.delete-btn:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {*/
   #admin-section {
     width: 95%; /* Adjust section width for small screens */
     padding: 10px;
@@ -123,8 +136,8 @@ button.delete-btn:hover {
   table {
     display: block;
     width: 100%;
+    margin-top: 0; /* Remove extra space above the table */
     font-size: 12px; /* Smaller font for mobile */
-    margin-top: 0; /* Remove extra spacing above the table */
   }
 
   thead {
@@ -146,30 +159,28 @@ button.delete-btn:hover {
   }
 
   td {
-    display: block; /* Ensures vertical stacking */
+    display: block; /* Ensure vertical stacking */
     width: 100%;
     padding: 5px 0;
-    text-align: left !important; /* Force left alignment */
+    text-align: left !important; /* Align all text to the left */
     word-wrap: break-word; /* Wrap long lines if necessary */
   }
-  
+  td p {
+    text-align: left !important; /* Ensure paragraphs inside cells are aligned */
+    margin: 0; /* Reset any margin for paragraphs */
+  }
+
   td:before {
     content: attr(data-label); /* Use custom labels for each column */
     font-weight: bold;
     display: inline-block;
     width: 120px; /* Adjust label width */
-    text-align: left; /* Ensure labels are also left-aligned */
-  }
-
-  table th, table td {
-    text-align: left !important; /* Ensure text alignment */
-    font-size: 12px; /* Reduce font size */    
-    padding: 5px;
+    text-align: left;
   }
 
   tr td:last-child {
-    display: flex; /* Flexbox for buttons */
-    justify-content: flex-start; /* Align buttons to the left */
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: flex-start;
     gap: 10px; /* Add space between the buttons */
   }
 
@@ -182,10 +193,11 @@ button.delete-btn:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 0; /* Remove unnecessary space below the nav */
+    margin-bottom: 0; /* Remove unnecessary space below nav */
   }
-  
-  nav a {
-    margin-bottom: 2px; /* Reduce space between each nav element */
+
+  nav a,
+  nav button {
+    margin-bottom: 2px; /* Reduce space between nav elements */
   }
 }
