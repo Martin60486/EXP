@@ -86,22 +86,37 @@ form i {
 .question-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 15px auto; /* Center each card */
-    background-color: #f8f8f8;
+    margin-top: 10px; /* Adjust the margin of the entire question card */
+    padding: 10px; /* Adjust padding around the card */
+    border: 1px solid #ddd; /* Optional: Add a border for separation */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #f9f9f9; /* Optional: Light background color */
     max-width: 800px; /* Restrict width for better readability */
 }
 
-.question-card h3, .question-card p {
-    margin: 10px 0; /* Add spacing between lines */
+.question-card h3 { /* question*/
+    margin-top: 5px; /* Reduce space above the question */
+    margin-bottom: 5px; /* Reduce space below "Asked by" */
+    font-weight: bold;
+    font-size: 18px; /* Optional: Adjust font size */
 }
 
-
-.question-card p {
-    font-size: 14px;
+.question-card p:nth-of-type(1) {
+    margin-top: 5px; /* Reduce space above "Asked by" */
+    font-size: 14px; /* Optional: Adjust font size */
     color: #555;
+}
+/* Style for the "Answered by" section */
+.question-card p:nth-of-type(2) {
+    margin-top: 5px; /* Adjust margin for "Answered by" */
+    font-size: 14px; /* Optional: Adjust font size */
+}
+
+/* Style for the answer text */
+.question-card p:nth-of-type(3) {
+    margin-top: 5px; /* Adjust space above the answer */
+    font-size: 14px; /* Optional: Adjust font size */
+    line-height: 1.6; /* Optional: Adjust line height for readability */
 }
 
 /* Responsive design */
