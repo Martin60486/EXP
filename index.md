@@ -11,7 +11,10 @@ title: Home
             A trusted CPA firm in Vancouver, we provide reliable and efficient accounting and tax services tailored to meet the unique needs of corporations, trusts, and individuals. With expertise in English and Chinese, we are here to support your financial success.
         </p>
     </div>
-</section>
+    <div>
+        <a href="./blog.html" style="font-weight: bold; color: #0056b3; float:left">Visit our blog</a>&nbsp;to ask questions! 
+    </div>
+ </section>
 
 <!-- about section has only one direct child: <div>, flex is not necessary-->
 <!-- <div> has two children: img and <p>; class .about-content-> flex align them horizontally-->

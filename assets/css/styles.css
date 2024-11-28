@@ -56,9 +56,10 @@ body {
 /* About Section */
 .about {
     background-color: #dce5ea;
-    padding: 40px 20px;
+    padding: 20px 20px; /*1: four directions; 2: first top & bottom, 2nd left and right; 4: top, right, bottom, left*/
     color: black;
     display: flex;
+    flex-direction: column;
     /*justify-content: center;*/
     text-align: left;
 }

@@ -11,6 +11,14 @@ async function loadCategories() {
 
         const categorySelect = document.getElementById("category");
         categorySelect.innerHTML = ""; // Clear existing options
+        //add the default "Select a category" option
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select a category";
+        defaultOption.selected = true; // Ensure it is selected by default
+        defaultOption.disabled = true; // Disable it to prevent selection
+        categorySelect.appendChild(defaultOption);
+        //Add fetched categories
         categories.forEach((category) => {
             const option = document.createElement("option");
             option.value = category.id;
@@ -64,8 +72,9 @@ async function loadQuestions() {
             const questionCard = document.createElement("div");
             questionCard.className = "question-card";
             questionCard.innerHTML = `
-                <h3>Asked by ${q.name}: ${q.question}</h3>
-                <p style="font-weight: bold; color: #333;">Answered by EXP:</p>
+                <p>Asked by ${q.name}:</p> 
+                <h3>${q.question}</h3>
+                <p>Answered by EXP:</p>
                 <p>${q.answer}</p>
             `;
             container.appendChild(questionCard);
