@@ -44,13 +44,17 @@ body {
     margin: 0; /* space between two elements, pushing two elements apart */
     padding-top: 0px;
     color: #1c0e05;
+    margin-top: -15px;
+    margin-bottom: 0;
 }
 
 .text-content p {
+    margin-top: -5px;
     font-size: 24px;
     margin-top: 0px;
     color: #1c0d04; /* #1b0c03f1, #1c0d04*/
     font-weight: bold;
+    line-height: 1.1;
 }
 
 /* About Section */
@@ -151,13 +155,15 @@ body {
     }
 
     .text-content h1, .banner h1 {
-        font-size: 36px;
-        margin-top: -15px;
+        font-size: 28px;
+        margin-top: -30px;
+        margin-bottom: 5px;
     }
 
     .banner p {
         font-size: 18px;
-        margin-top: -15px;
+        margin-top: -13px;
+        line-height: 1; /* Adjust the line height to reduce spacing */
     }
     
     /* About Section */
