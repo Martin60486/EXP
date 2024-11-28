@@ -5,8 +5,9 @@ title: Admin
 <link rel="stylesheet" href="./assets/css/admin.css">
 
 <nav>
-  <a href="./index.html">Home</a> | <a href="./blog.html">Blog</a>
-  <button id="logout-btn" style="background:none; border:none; color:#0f4c81; cursor:pointer; font-weight:bold;">Log Out</button>
+  <a href="./index.html" class="nav-link">Home</a>
+  <a href="./blog.html" class="nav-link">Blog</a>
+  <button id="logout-btn" class="nav-button">Log Out</button>
 </nav>
 <div id="admin-section">
   <h3>Questions</h3>

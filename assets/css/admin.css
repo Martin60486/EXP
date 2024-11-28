@@ -11,20 +11,31 @@ h2 {
   text-align: center;
   color: #333;
 }
-
 nav {
-  margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  gap: 10px; /* Adds space between items */
+  align-items: center;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
+.nav-link {
+  text-decoration: none; /* Removes underline */
   color: #0f4c81;
   font-weight: bold;
 }
 
-nav a:hover {
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #0f4c81;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-button:hover {
   text-decoration: underline;
 }
 
@@ -96,4 +107,85 @@ button.delete-btn {
 
 button.delete-btn:hover {
   background-color: #c9302c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #admin-section {
+    width: 95%; /* Adjust section width for small screens */
+    padding: 10px;
+  }
+
+  h3 {
+    margin-bottom: 2px; /* Reduce space between "Questions" and the table */
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    font-size: 12px; /* Smaller font for mobile */
+    margin-top: 0; /* Remove extra spacing above the table */
+  }
+
+  thead {
+    display: none; /* Hide the table header on small screens */
+  }
+
+  tbody {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    width: 100%;
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column; /* Stack cells vertically within each row */
+    border: 1px solid #ddd;
+    margin-bottom: 10px; /* Add space between rows */
+    padding: 10px;
+  }
+
+  td {
+    display: block; /* Ensures vertical stacking */
+    width: 100%;
+    padding: 5px 0;
+    text-align: left !important; /* Force left alignment */
+    word-wrap: break-word; /* Wrap long lines if necessary */
+  }
+  
+  td:before {
+    content: attr(data-label); /* Use custom labels for each column */
+    font-weight: bold;
+    display: inline-block;
+    width: 120px; /* Adjust label width */
+    text-align: left; /* Ensure labels are also left-aligned */
+  }
+
+  table th, table td {
+    text-align: left !important; /* Ensure text alignment */
+    font-size: 12px; /* Reduce font size */    
+    padding: 5px;
+  }
+
+  tr td:last-child {
+    display: flex; /* Flexbox for buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 10px; /* Add space between the buttons */
+  }
+
+  button {
+    font-size: 12px; /* Adjust button size for mobile */
+    padding: 5px 5px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0; /* Remove unnecessary space below the nav */
+  }
+  
+  nav a {
+    margin-bottom: 2px; /* Reduce space between each nav element */
+  }
 }
