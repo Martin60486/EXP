@@ -130,6 +130,16 @@ form i {
     min-height: 50px; /* Minimum height for visibility */
 }
 
+.answer-text {
+    font-family: inherit; /* Inherit the parent's font */
+    font-size: 16px; /* Ensure consistent font size */
+    line-height: 1.5; /* Set line spacing */
+    white-space: pre-wrap; /* Preserve line breaks */
+    word-wrap: break-word; /* Prevent long lines from overflowing */
+    color: #333; /* Set consistent text color */
+    margin: 0; /* Remove extra margin */
+}
+
 .question-card h3 { /* question*/
     margin-top: 5px; /* Reduce space above the question */
     margin-bottom: 5px; /* Reduce space below "Asked by" */

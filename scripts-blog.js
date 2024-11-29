@@ -75,8 +75,8 @@ async function loadQuestions() {
                 <p>Asked by ${q.name}:</p> 
                 <h3>${q.question}</h3>
                 <p>Answered by EXP:</p>
-                <p>${q.answer}</p>
-            `;
+                <pre class="answer-text">${q.answer}</pre> 
+            `; //pre to ensure line breaks and white spaces in the q.answer
             container.appendChild(questionCard);
         });
     } catch (error) {
