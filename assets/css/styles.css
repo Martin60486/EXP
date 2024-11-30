@@ -24,6 +24,8 @@ body {
     justify-content: center;
     text-align: center;
     color: brown;
+    margin: 0;  /*new*/
+    padding: 0; /*new*/
 }
 /* Logo */
 .logo-image {
