@@ -143,7 +143,9 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         min-height: 40vh; /* Set a smaller height for mobile */  
+        width: 100vw; /* new Full width of the viewport */
     }
+
     .logo-image {
         position: absolute;
         top: 10px;
