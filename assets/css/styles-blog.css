@@ -211,11 +211,11 @@ form i {
         margin: 0;
         padding: 0;
     }
-    .banner {
-        width: 100vw; /* Full width of the viewport */
-        height: auto; /* Adjust height */
-        background-size: cover; /* Ensure full coverage */
-    }
+/*    .banner {
+        width: 100vw; 
+        height: auto; 
+        background-size: cover; 
+    }*/
 
     form {
         display: flex;
