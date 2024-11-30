@@ -204,11 +204,25 @@ form i {
 /* Responsive design */
 @media (max-width: 767px) {
     form {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        justify-content: center; /* Center vertically */
-        gap: 5px;
-        margin: 0;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        margin: 0 auto; /* Ensure it's centered within the container */
+        width: 95%; /* Responsive width */
+        max-width: 400px; /* Limit form width */
+        gap: 5px; /* Add consistent spacing between form elements */
+    }
+
+    #question-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        margin: 0 auto;
+        width: 90%;
+        max-width: 400px;
+       /* text-align: center;*/
     }
 
     form input, form select, form textarea, form button {
@@ -223,7 +237,7 @@ form i {
     }
 
     #name, #category, #question {
-        margin: 0 10px;
+        margin: 0;
         padding: 4px;
         height: 20px;
         font-size: 14px;
