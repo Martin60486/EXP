@@ -6,7 +6,10 @@ const mySupabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 // Load Categories
 async function loadCategories() {
     try {
-        const { data: categories, error } = await mySupabase.from("categories").select("*");
+        const { data: categories, error } = await mySupabase
+            .from("categories")
+            .select("*")
+            .order("id",{ ascending: true});
         if (error) throw error;
 
         const categorySelect = document.getElementById("category");

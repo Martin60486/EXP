@@ -12,7 +12,6 @@ title: Admin
 </nav>
 
 <div id="admin-section">
-  <h3>Questions</h3>
   <section id="questions-container">
     <!-- Questions will be dynamically populated here -->
   </section>

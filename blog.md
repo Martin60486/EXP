@@ -3,9 +3,9 @@ layout: default
 title: Blog
 ---
 <link rel="stylesheet" href="./assets/css/styles-blog.css">
-<a href="./index.html" style="font-weight: bold; color: purple; margin-right: 20px; text-align: left;">Home</a>
+<a href="./index.html" style="font-weight: bold; color: purple; margin-left: 5px; margin-bottom: 0; text-align: left;">Home</a>
 <h2>Ask us questions</h2>
-<form id="question-form">
+<form id="question-form" style="margin-top: 0;">
     <input type="text" id="name" name="name" placeholder="Your Name (optional)">
     <select id="category" name="category">
         <option value="">Select a category</option>
