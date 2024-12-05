@@ -143,6 +143,12 @@ form i {
     color: #333; /* Set consistent text color */
     margin: 0; /* Remove extra margin */
 }
+.answer-text div {
+    margin: 0 0 5px 0; /* Space between lines */
+    padding: 0; /* No padding for divs */
+    line-height: 1.4; /* Improve readability */
+    white-space: pre-wrap; /* Preserve spaces and breaks */
+}
 
 .question-card h3 { /* question*/
     margin-top: 5px; /* Reduce space above the question */

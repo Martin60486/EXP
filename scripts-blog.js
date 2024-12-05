@@ -82,15 +82,23 @@ async function loadQuestions() {
 
         const container = document.getElementById("questions-container");
         container.innerHTML = ""; // Clear old questions
+
         questions.forEach((q) => {
             const questionCard = document.createElement("div");
             questionCard.className = "question-card";
+        
+            // Ensure all answer lines are wrapped in <div> tags
+            const formattedAnswer = q.answer
+                .split("\n")
+                .map((line) => `<div>${line}</div>`)
+                .join("");
+        
             questionCard.innerHTML = `
                 <p>Asked by ${q.name}:</p> 
                 <h3 style="cursor: pointer;" class="question-header">${q.question}</h3>
                 <div class="answer-text" style="display: none;">
                     <p>Answered by EXP:</p>
-                    ${q.answer}
+                    ${formattedAnswer}
                 </div>
             `;
             container.appendChild(questionCard);
