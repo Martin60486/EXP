@@ -16,6 +16,14 @@ title: Blog
 
 <section id="questions-container">
     <!-- Questions will be displayed dynamically -->
+  {% for question in site.data.questions %}
+  <div class="question-item" style="cursor: pointer; font-weight: bold; margin-top: 10px;">
+    {{ question.title }}
+  </div>
+  <div class="answer-item" style="display: none; margin-left: 20px; margin-top: 5px;">
+    {{ question.answer }}
+  </div>
+    {% endfor %}
 </section>
 
 <nav style="text-align: center; margin-bottom: 20px;">

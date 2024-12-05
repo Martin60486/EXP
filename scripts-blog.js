@@ -2,26 +2,23 @@
 const SUPABASE_URL = 'https://fsejygujfoxbioyxwnex.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzZWp5Z3VqZm94YmlveXh3bmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2MzIwMjcsImV4cCI6MjA0ODIwODAyN30.l14Ik580RCfmeW37Q6RjrNsjp-mFC91xIE0yg2JC7HI'; // Replace with your actual Anon Key
 const mySupabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
 // Load Categories
 async function loadCategories() {
     try {
         const { data: categories, error } = await mySupabase
             .from("categories")
             .select("*")
-            .order("id",{ ascending: true});
+            .order("id", { ascending: true });
         if (error) throw error;
 
         const categorySelect = document.getElementById("category");
-        categorySelect.innerHTML = ""; // Clear existing options
-        //add the default "Select a category" option
+        categorySelect.innerHTML = "";
         const defaultOption = document.createElement("option");
         defaultOption.value = "";
         defaultOption.textContent = "Select a category";
-        defaultOption.selected = true; // Ensure it is selected by default
-        defaultOption.disabled = true; // Disable it to prevent selection
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
         categorySelect.appendChild(defaultOption);
-        //Add fetched categories
         categories.forEach((category) => {
             const option = document.createElement("option");
             option.value = category.id;
@@ -33,10 +30,24 @@ async function loadCategories() {
     }
 }
 
+// Apply collapsible functionality
+function applyCollapsibleFunctionality() {
+    const questionHeaders = document.querySelectorAll(".question-header");
+    questionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+            const answer = header.nextElementSibling; // Directly targets the adjacent <div> with the answer
+            if (answer.style.display === "none" || !answer.style.display) {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        });
+    });
+}
+
 // Submit Question
 async function submitQuestion(event) {
     event.preventDefault();
-
     const name = document.getElementById("name").value || "Anonymous";
     const category = document.getElementById("category").value;
     const question = document.getElementById("question").value;
@@ -76,12 +87,17 @@ async function loadQuestions() {
             questionCard.className = "question-card";
             questionCard.innerHTML = `
                 <p>Asked by ${q.name}:</p> 
-                <h3>${q.question}</h3>
-                <p>Answered by EXP:</p>
-                <pre class="answer-text">${q.answer}</pre> 
-            `; //pre to ensure line breaks and white spaces in the q.answer
+                <h3 style="cursor: pointer;" class="question-header">${q.question}</h3>
+                <div class="answer-text" style="display: none;">
+                    <p>Answered by EXP:</p>
+                    ${q.answer}
+                </div>
+            `;
             container.appendChild(questionCard);
         });
+
+        // Reapply collapsible functionality after loading questions
+        applyCollapsibleFunctionality();
     } catch (error) {
         console.error("Error loading questions:", error);
     }
