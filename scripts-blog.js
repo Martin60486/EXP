@@ -32,10 +32,10 @@ async function loadCategories() {
 
 // Apply collapsible functionality
 function applyCollapsibleFunctionality() {
-    const questionHeaders = document.querySelectorAll(".question-header");
-    questionHeaders.forEach((header) => {
-        header.addEventListener("click", () => {
-            const answer = header.nextElementSibling; // Directly targets the adjacent <div> with the answer
+    const questionCards = document.querySelectorAll(".question-card");
+    questionCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const answer = card.querySelector(".answer-text"); // Locate the answer within the card
             if (answer.style.display === "none" || !answer.style.display) {
                 answer.style.display = "block";
             } else {
