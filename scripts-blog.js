@@ -76,12 +76,12 @@ async function loadQuestions() {
     try {
         const { data: questions, error } = await mySupabase
             .from("questions")
-            .select("*")
-            .order("category_id", { ascending: true });
+            .select("*") // Ensure no unnecessary filters
+            .order("id", { ascending: true });
         if (error) throw error;
 
         const container = document.getElementById("questions-container-blog");
-        container.innerHTML = ""; // Clear old questions
+        container.innerHTML = "";
 
         questions.forEach((q) => {
             const questionCard = document.createElement("details");
@@ -90,10 +90,16 @@ async function loadQuestions() {
                 <div class="author">
                     Asked by ${q.name || "Anonymous"};&nbsp; Answered by EXP
                 </div>
-                <div class="answer-details">${q.answer
-                    .split("\n")
-                    .map(line => `<div>${line.trim()}</div>`)
-                    .join("")}</div>
+                <div class="answer-details">
+                    ${
+                        q.answer
+                            ? q.answer
+                                  .split("\n")
+                                  .map(line => `<div>${line.trim()}</div>`)
+                                  .join("")
+                            : "<em>No answer yet</em>" // Placeholder for empty answers
+                    }
+                </div>
             `;
             container.appendChild(questionCard);
         });
