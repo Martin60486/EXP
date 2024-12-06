@@ -20,19 +20,24 @@ h1, h2 {
   }
   
   /* Navigation links styling */
-  #nav-links {
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  .nav-links {
     display: flex;
     gap: 15px; /* Add space between links */
   }
   
-  #nav-links a {
+  .nav-links a {
     text-decoration: none; /* Remove underline */
     font-weight: bold; /* Make links bold */
     color: #0056b3; /* Customize the link color */
     margin-left: 10px
   }
   
-  #nav-links a:hover {
+  .nav-links a:hover {
     text-decoration: underline; /* Add underline on hover */
   }
 
@@ -116,8 +121,8 @@ form i {
 }
 /* Style the question card */
 details {
-    margin-bottom: 0px 10px;
-    padding: 10px;
+    margin-bottom: 0px 5px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -184,8 +189,8 @@ details[open] {
 .question-card {
     display: flex;
     flex-direction: column;
-    margin-top: 10px; /* Adjust the margin of the entire question card */
-    padding: 10px; /* Adjust padding around the card */
+    margin-top: 5px; /* Adjust the margin of the entire question card */
+    padding: 5px; /* Adjust padding around the card */
     border: 1px solid #ddd; /* Optional: Add a border for separation */
     border-radius: 5px; /* Optional: Add rounded corners */
     background-color: #f9f9f9; /* Optional: Light background color */
