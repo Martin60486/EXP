@@ -152,22 +152,12 @@ form i {
     line-height: 1.4;/* Adjust the line height for the question text */
 }
 
-.question-card p:nth-of-type(1) {
-    margin-top: 5px; /* Reduce space above "Asked by" */
-    font-size: 14px; /* Optional: Adjust font size */
-    color: #555;
-}
-/* Style for the "Answered by" section */
-.question-card p:nth-of-type(2) {
-    margin-top: 5px; /* Adjust margin for "Answered by" */
-    font-size: 14px; /* Optional: Adjust font size */
+.question-card .answer-text p:first-of-type {
+    margin-top: 0; /* Adjust margin for "Answered by EXP:" */
 }
 
-/* Style for the answer text */
-.question-card p:nth-of-type(3) {
-    margin-top: 5px; /* Adjust space above the answer */
-    font-size: 14px; /* Optional: Adjust font size */
-    line-height: 1.6; /* Optional: Adjust line height for readability */
+.question-card .answer-text p:last-of-type {
+    margin-top: 0; /* Adjust margin for the actual answer */
 }
 .question-card .actions {
     display: flex;

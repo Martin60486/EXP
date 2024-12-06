@@ -90,7 +90,7 @@ async function loadQuestions() {
                 <h3 style="cursor: pointer;" class="question-header">${q.question}</h3>
                 <div class="answer-text" style="display: none;">
                     <p>Answered by EXP:</p>
-                    ${q.answer}
+                    <p>${q.answer}</p>
                 </div>
             `;
             container.appendChild(questionCard);
