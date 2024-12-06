@@ -86,9 +86,10 @@ async function loadQuestions() {
         questions.forEach((q) => {
             const questionCard = document.createElement("details");
             questionCard.innerHTML = `
-                <div class="summary-author">Asked by ${q.name || "Anonymous"}</div>
                 <summary class="summary-question">${q.question}</summary>
-                <p class="answer-author">Answered by EXP:</p>
+                <div class="author">
+                    Asked by ${q.name || "Anonymous"};&nbsp; Answered by EXP
+                </div>
                 <div class="answer-details">${q.answer
                     .split("\n")
                     .map(line => `<div>${line.trim()}</div>`)

@@ -112,7 +112,7 @@ form i {
 #questions-container-blog {
     width:90%;
     margin: 5px auto;
-  /*  white-space: pre-wrap;*/
+    /*white-space: pre-wrap;  Note: this line create big space between "asked by...." and question, and answer*/
 }
 /* Style the question card */
 details {
@@ -137,8 +137,48 @@ summary {
 details p, details div {
     margin: 5px 0;
 }
-.summary-author, .answer-author {
-    font-size: 13px;
+.author {
+    font-size: 14px;
+    color: gray; 
+    font-style: italic;   
+}
+/* Styling for "Asked by" line */
+/*.summary-author {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 4px; 
+}*/
+
+/* Styling for the question */
+.summary-question {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Adds pointer cursor for interactivity */
+}
+
+/* Styling for the answer section */
+/*.answer-author {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}*/
+
+.answer-details > div {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* General card styling */
+details {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+details[open] {
+    background-color: #f3f3f3;
 }
 
 .question-card {
@@ -269,6 +309,13 @@ details p, details div {
 
     #question {
         height: 60px;
+    }
+
+    .answer-details {
+        font-size: 14px;
+    }
+    .author {
+        font-size: 13px;
     }
 
     form button {
