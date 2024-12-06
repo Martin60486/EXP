@@ -109,6 +109,37 @@ form i {
     margin: 20px auto;
     white-space: pre-wrap;
 }
+#questions-container-blog {
+    width:90%;
+    margin: 5px auto;
+  /*  white-space: pre-wrap;*/
+}
+/* Style the question card */
+details {
+    margin-bottom: 0px 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Style the summary (question header) */
+summary {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0px 5px;
+    outline: none;
+}
+
+/* Style the answer content */
+details p, details div {
+    margin: 5px 0;
+}
+.summary-author, .answer-author {
+    font-size: 13px;
+}
 
 .question-card {
     display: flex;

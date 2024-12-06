@@ -14,7 +14,7 @@ title: Blog
     <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
 </form>
 
-<section id="questions-container">
+<section id="questions-container-blog">
     <!-- Questions will be displayed dynamically -->
 </section>
 

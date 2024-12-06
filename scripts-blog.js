@@ -80,29 +80,26 @@ async function loadQuestions() {
             .order("category_id", { ascending: true });
         if (error) throw error;
 
-        const container = document.getElementById("questions-container");
+        const container = document.getElementById("questions-container-blog");
         container.innerHTML = ""; // Clear old questions
+
         questions.forEach((q) => {
-            const questionCard = document.createElement("div");
-            questionCard.className = "question-card";
+            const questionCard = document.createElement("details");
             questionCard.innerHTML = `
-                <p>Asked by ${q.name}:</p> 
-                <h3 style="cursor: pointer;" class="question-header">${q.question}</h3>
-                <div class="answer-text" style="display: none;">
-                    <p>Answered by EXP:</p>
-                    <p>${q.answer}</p>
-                </div>
+                <div class="summary-author">Asked by ${q.name || "Anonymous"}</div>
+                <summary class="summary-question">${q.question}</summary>
+                <p class="answer-author">Answered by EXP:</p>
+                <div class="answer-details">${q.answer
+                    .split("\n")
+                    .map(line => `<div>${line.trim()}</div>`)
+                    .join("")}</div>
             `;
             container.appendChild(questionCard);
         });
-
-        // Reapply collapsible functionality after loading questions
-        applyCollapsibleFunctionality();
     } catch (error) {
         console.error("Error loading questions:", error);
     }
 }
-
 // Initialize Page
 document.addEventListener("DOMContentLoaded", () => {
     loadCategories();
