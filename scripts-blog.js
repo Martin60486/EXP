@@ -77,7 +77,8 @@ async function loadQuestions() {
         const { data: questions, error } = await mySupabase
             .from("questions")
             .select("*") // Ensure no unnecessary filters
-            .order("category_id", { ascending: true });
+            .order("category_id", { ascending: true })
+            .order("id", { ascending: true });
         if (error) throw error;
 
         const container = document.getElementById("questions-container-blog");
