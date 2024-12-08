@@ -59,6 +59,13 @@ async function saveChanges(id) {
     return;
   }
 
+  // Confirm with the user before proceeding
+  const isConfirmed = confirm('Are you sure you want to save your changes?');
+  if (!isConfirmed) {
+    alert('Changes were not saved.');
+    return; // Exit if the user does not confirm
+  }
+
   try {
     const { error } = await asupabase
       .from('questions')
@@ -77,6 +84,8 @@ async function saveChanges(id) {
 // Delete Question
 async function deleteQuestion(id) {
   if (!confirm('Are you sure you want to delete this question?')) return;
+  if (!confirm('AGAIN, ARE YOU SURE YOU WANT TO DELETE THIS QUESTION?')) return;
+
 
   try {
     const { error } = await asupabase
