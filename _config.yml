@@ -1,5 +1,7 @@
 title: "EXP Accounting"
-description: "Chartered Professional Accountants in Vancouver"
+#description: "Chartered Professional Accountants in Vancouver"
+description: "Affordable bookkeeping and tax services for small businesses and individuals."
+keywords: "bookkeeping, tax services, accounting, small business, CPA, Vancouver, EXP Accounting"
 baseurl: "" # Leave empty if deploying to the root of a custom domain: www.expaccounting.ca. 
 # This ensures that all site files appear as if they are served from the root
 # of your custom domain, not from a subdirectory like /EXP.

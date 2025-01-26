@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Home
+title: Professional Bookkeeping & Tax Services | EXP Accounting
+description: Affordable bookkeeping and tax services for small businesses and individuals.
+keywords: bookkeeping, tax services, accounting, small business, CPA, Vancouver, EXP Accounting
 ---
 
 <!-- About Section -->
