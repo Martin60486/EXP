@@ -17,7 +17,7 @@ async function loadQuestions() {
     const { data: questions, error } = await asupabase
       .from('questions')
       .select('*')
-      .order('id', { ascending: true });
+      .order('id', { ascending: false });
 
     if (error) throw error;
 
