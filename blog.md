@@ -2,7 +2,6 @@
 layout: default
 title: Professional Bookkeeping & Tax Services Blog| EXP Accounting
 description: Affordable bookkeeping and tax services for small businesses and individuals.
-keywords: bookkeeping, tax services, accounting, small business, CPA, Vancouver, EXP Accounting
 ---
 <link rel="stylesheet" href="./assets/css/styles-blog.css">
 <a href="./index.html" style="font-weight: bold; color: purple; margin-left: 5px; margin-bottom: 0; text-align: left;">Home</a>
