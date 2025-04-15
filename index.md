@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Professional Bookkeeping & Tax Services | EXP Accounting
+title: Professional Bookkeeping & Tax Services | MM CPA
 description: Affordable bookkeeping and tax services for small businesses and individuals.
-keywords: bookkeeping, tax services, accounting, small business, CPA, Vancouver, EXP Accounting
+keywords: bookkeeping, tax services, accounting, small business, CPA, Vancouver, MM CPA
 ---
 
 <!-- About Section -->
