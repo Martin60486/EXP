@@ -32,7 +32,8 @@ body {
     position: absolute;
     top: 20px; /*top position from the upper border of containter*/
     left: 20px; /*left position from the left border of container */
-    height: 50px; /* width will adjust according to ratio of the original image */
+    height: 50px !important; /* width will adjust according to ratio of the original image */
+    width: auto !important;
 }
 
 /* Text Styling */
