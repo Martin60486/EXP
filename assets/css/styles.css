@@ -34,6 +34,7 @@ body {
     left: 20px; /*left position from the left border of container */
     height: 100px !important; /* width will adjust according to ratio of the original image */
     width: auto !important;
+    max-width: none !important;
 }
 
 /* Text Styling */
