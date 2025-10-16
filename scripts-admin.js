@@ -33,6 +33,8 @@ async function loadQuestions() {
 function renderQuestionCard(q, container) {
   const questionCard = document.createElement('div');
   questionCard.className = 'question-card';
+
+  // Format timestamp (e.g. "Mar 22, 2025, 06:33 PM")
   const formattedTime = q.timestamp
     ? new Date(q.timestamp).toLocaleString('en-US', {
         year: 'numeric',
@@ -42,21 +44,39 @@ function renderQuestionCard(q, container) {
         minute: '2-digit',
       })
     : 'Unknown date';
-  
+
+  // Build the question card HTML
   questionCard.innerHTML = `
-    <p>
-      <strong>Asked by:</strong> ${q.name || 'Anonymous'} &nbsp; ${formattedTime}
-    </p>  
-    <h3 contenteditable="true" data-id="${q.id}" data-field="question">${q.question}</h3>
-    <p><strong>Answered by EXP:</strong></p>
-    <pre contenteditable="true" data-id="${q.id}" data-field="answer" style="white-space: pre-wrap;">${q.answer || ''}</pre>
-    <div class="actions">
+    <!-- Name and date on the same line -->
+    <p style="margin: 0; padding: 0;">
+      <strong>Asked by:</strong> ${q.name || 'Anonymous'}&nbsp;${formattedTime}
+    </p>
+
+    <!-- Question text, left-aligned and close to name line -->
+    <p contenteditable="true" data-id="${q.id}" data-field="question"
+       style="margin: 4px 0 0 0; font-weight: bold;">
+      ${q.question}
+    </p>
+
+    <!-- Answer section -->
+    <p style="margin: 6px 0 4px 0;"><strong>Answered by EXP:</strong></p>
+    <pre contenteditable="true" data-id="${q.id}" data-field="answer"
+         style="white-space: pre-wrap; margin: 0; background-color: #fff8e1; border: none;">
+      ${q.answer || ''}
+    </pre>
+
+    <!-- Action buttons -->
+    <div class="actions" style="margin-top: 6px;">
       <button class="save-btn" onclick="saveChanges(${q.id})">Save</button>
       <button class="delete-btn" onclick="deleteQuestion(${q.id})">Delete</button>
     </div>
   `;
+
+  // Add card to the container
   container.appendChild(questionCard);
 }
+
+  
 //    <p><strong>Asked by:</strong> ${q.name || 'Anonymous'}</p>  note: this is replaced by the line with data
 // Save Changes
 async function saveChanges(id) {
