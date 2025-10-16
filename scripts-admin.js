@@ -32,6 +32,7 @@ async function loadQuestions() {
 // Render Question Card
 function renderQuestionCard(q, container) {
   const questionCard = document.createElement('div');
+  questionCard.className = 'question-card';
   const formattedTime = q.timestamp
     ? new Date(q.timestamp).toLocaleString('en-US', {
         year: 'numeric',
@@ -41,10 +42,12 @@ function renderQuestionCard(q, container) {
         minute: '2-digit',
       })
     : 'Unknown date';
-  questionCard.className = 'question-card';
+  
   questionCard.innerHTML = `
-    <p><strong>Asked by:</strong> ${q.name || 'Anonymous'} 
-    <span style="color: gray; font-size: 0.9em; margin-left: 10px;">(${formattedTime})</span></p>
+    <p style="margin-bottom: 0;">
+      <strong>Asked by:</strong> ${q.name || 'Anonymous'} 
+      <span style="color: gray; font-size: 0.9em; margin-left: 8px;">[${formattedTime}]</span>
+    </p>  
     <h3 contenteditable="true" data-id="${q.id}" data-field="question">${q.question}</h3>
     <p><strong>Answered by EXP:</strong></p>
     <pre contenteditable="true" data-id="${q.id}" data-field="answer" style="white-space: pre-wrap;">${q.answer || ''}</pre>
