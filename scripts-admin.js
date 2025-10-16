@@ -34,7 +34,10 @@ function renderQuestionCard(q, container) {
   const questionCard = document.createElement('div');
   questionCard.className = 'question-card';
   questionCard.innerHTML = `
-    <p><strong>Asked by:</strong> ${q.name || 'Anonymous'}</p>
+    <p><strong>Asked by:</strong> ${q.name || 'Anonymous'} 
+      <span style="color: gray; font-size: 0.9em; margin-left: 10px;">
+        (${q.date ? new Date(q.date).toLocaleDateString() : 'Unknown date'})
+      </span></p>
     <h3 contenteditable="true" data-id="${q.id}" data-field="question">${q.question}</h3>
     <p><strong>Answered by EXP:</strong></p>
     <pre contenteditable="true" data-id="${q.id}" data-field="answer" style="white-space: pre-wrap;">${q.answer || ''}</pre>
@@ -45,6 +48,7 @@ function renderQuestionCard(q, container) {
   `;
   container.appendChild(questionCard);
 }
+//    <p><strong>Asked by:</strong> ${q.name || 'Anonymous'}</p>  note: this is replaced by the line with data
 // Save Changes
 async function saveChanges(id) {
   const questionElement = document.querySelector(`[data-id="${id}"][data-field="question"]`);
