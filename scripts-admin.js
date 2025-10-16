@@ -44,7 +44,7 @@ function renderQuestionCard(q, container) {
     : 'Unknown date';
   
   questionCard.innerHTML = `
-    <p style="margin-bottom: 0;">
+    <p>
       <strong>Asked by:</strong> ${q.name || 'Anonymous'} &nbsp; ${formattedTime}
     </p>  
     <h3 contenteditable="true" data-id="${q.id}" data-field="question">${q.question}</h3>
