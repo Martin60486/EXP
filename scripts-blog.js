@@ -78,7 +78,7 @@ async function loadQuestions() {
             .from("questions")
             .select("*") // Ensure no unnecessary filters
             .order("category_id", { ascending: true })
-            .order("id", { ascending: true });
+            .order("id", { ascending: false });
         if (error) throw error;
 
         const container = document.getElementById("questions-container-blog");
